@@ -1,0 +1,7 @@
+1. Write python code for generator that generates binary for given decimal number.
+2. Write python code for generator that generates fibonacci number till givem maximum number.
+3. Write python code which generates on prime numbers in given range.
+4. Use yield with iterator's next method? Comment on it's behavior. 
+5. What is the difference between generator and iterator?
+6. Use iter and next with dictionary and tupples. Observe their behavior.
+7. Write a script which reads lines from file and calculate & display numeric  characters in each line. Use iterator and/or generator concept for the same.
