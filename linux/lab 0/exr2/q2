@@ -1,0 +1,13 @@
+a)Change to the home directory of another user directly, using cd ~username.
+
+root@ranjit-Vostro-1540:~# cd ~ranjit
+root@ranjit-Vostro-1540:/home/ranjit# 
+
+
+(b) Change back into your home directory.
+root@ranjit-Vostro-1540:/home/ranjit# cd ~
+root@ranjit-Vostro-1540:~# 
+
+
+
+

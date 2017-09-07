@@ -1,0 +1,6 @@
+ranjit@ranjit-Vostro-1540:~/linux/ass2/exr2/play$ ln -s /dev/pts/2 terminal
+ranjit@ranjit-Vostro-1540:~/linux/ass2/exr2/play$ ln  /dev/pts/2 terminal
+
+ln: failed to create hard link 'terminal': File exists
+
+

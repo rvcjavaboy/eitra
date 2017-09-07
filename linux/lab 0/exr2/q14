@@ -1,0 +1,25 @@
+QUES 14. Still in your home directory, copy the entire directory play to a directory called work, preserving the symbolic link.
+
+ranjit@ranjit-Vostro-1540:/home/work$ pwd
+/home/work
+
+ranjit@ranjit-Vostro-1540:/home$ mkdir work play
+ranjit@ranjit-Vostro-1540:/home$cd play
+
+ranjit@ranjit-Vostro-1540:/home/work$ln -s demo.txt demo_ln
+
+
+ranjit@ranjit-Vostro-1540:/home/work$cd ..
+
+
+ranjit@ranjit-Vostro-1540:/home$cp -r  play work 
+
+
+ranjit@ranjit-Vostro-1540:/home$cd work 
+ranjit@ranjit-Vostro-1540:/home/work$ls
+
+demo.txt  demo_ln
+
+
+
+

@@ -1,0 +1,29 @@
+
+Creates a new directory called mydir whose parent is the current directory.
+
+		ranjit@ranjit-Vostro-1540:~/play$ ls
+		cmd  hello  hello.c  passwd
+		ranjit@ranjit-Vostro-1540:~/play$ mkdir demo
+		ranjit@ranjit-Vostro-1540:~/play$ ls
+		cmd  demo  hello  hello.c  passwd
+		ranjit@ranjit-Vostro-1540:~/play$ 
+
+
+Create the mydir directory, and set its permissions such that all users may read, write, and execute the contents.
+
+			ranjit@ranjit-Vostro-1540:~/play$ mkdir -m a=rwx mydemo
+			ranjit@ranjit-Vostro-1540:~/play$ ls -l
+			total 44
+			-rw-rw-r-- 1 ranjit ranjit 31044 Sep  7 14:31 cmd
+			drwxrwxr-x 2 ranjit ranjit  4096 Sep  7 14:44 demo
+			-rw-rw-r-- 1 ranjit ranjit     0 Sep  7 14:28 hello
+			-rw-rw-r-- 1 ranjit ranjit     0 Sep  7 14:28 hello.c
+			drwxrwxrwx 2 ranjit ranjit  4096 Sep  7 14:46 mydemo
+			-rw-r--r-- 1 root   root    2350 Sep  6 21:21 passwd
+			ranjit@ranjit-Vostro-1540:~/play$ 
+
+
+
+
+Creates the directory /home/chope/a/b/c. If the parent directory /home/chope/a/b does not already exist, mkdir will create that directory first.
+			ranjit@ranjit-Vostro-1540:mkdir -p /home/ranjit/demo/hello/p

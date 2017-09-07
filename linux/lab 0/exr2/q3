@@ -1,0 +1,8 @@
+ranjit@ranjit-Vostro-1540:~/linux$ mkdir work play
+ranjit@ranjit-Vostro-1540:~/linux$ rmdir work
+ranjit@ranjit-Vostro-1540:~/linux$ cp /etc/passwd .
+ranjit@ranjit-Vostro-1540:~/linux$ ls
+ass 1  home  lab 0  passwd  play
+ranjit@ranjit-Vostro-1540:~/linux$ mv passwd play
+
+

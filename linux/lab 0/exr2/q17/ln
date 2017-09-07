@@ -1,0 +1,18 @@
+ln, by default, creates a hard link
+		two types of links
+			1 hard link
+			2 soft link
+
+
+			1)hard link 
+					ranjit@ranjit-Vostro-1540:~/play$ ln demo.txt demo_ln.txt
+
+					arch
+							demo.txt->>>>>>    inode of file   <<<<<<<<<<<<<<<-----demo_ln.txt
+
+			2)soft link
+					ranjit@ranjit-Vostro-1540:~/play$ ln -s demo.txt demo_ln.txt
+
+					arch
+							demo_ln.txt->>>>>>>  demo.txt   ->>>>>> inode of file 
+	

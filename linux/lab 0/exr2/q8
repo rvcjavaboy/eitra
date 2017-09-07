@@ -1,0 +1,6 @@
+QUES 8. Copy hello.txt to terminal. What happens?
+
+ranjit@ranjit-Vostro-1540:~/linux/ass2/exr2/play$ cp hello.txt /dev/tty
+ssssssss
+ssssssssssssssssssssssssssssssssssss
+ranjit@ranjit-Vostro-1540:~/linux/ass2/exr2/play$ 

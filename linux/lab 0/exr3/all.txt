@@ -1,0 +1,880 @@
+Assignment 3
+
+Que1 Describe three different ways of setting the permissions on a file or directory to rrr. Create a file and see if this works.
+
+-->>
+1. Octal:
+ranjit@ranjit-Vostro-1540:~$ chmod 0444 sample.txt
+ranjit@ranjit-Vostro-1540:~$ ls -l
+total 44
+drwxr-xr-x 2 ranjit ranjit 4096 Sep  7 11:19 Desktop
+drwxr-xr-x 2 ranjit ranjit 4096 Sep  7 11:19 Documents
+drwxr-xr-x 2 ranjit ranjit 4096 Sep  7 11:19 Downloads
+-rw-r--r-- 1 ranjit ranjit 8980 Sep  7 11:11 examples.desktop
+drwxr-xr-x 2 ranjit ranjit 4096 Sep  7 11:19 Music
+drwxr-xr-x 2 ranjit ranjit 4096 Sep  7 11:19 Pictures
+drwxr-xr-x 2 ranjit ranjit 4096 Sep  7 11:19 Public
+-r--r--r-- 1 ranjit ranjit    0 Sep  7 11:27 sample.txt
+drwxr-xr-x 2 ranjit ranjit 4096 Sep  7 11:19 Templates
+drwxr-xr-x 2 ranjit ranjit 4096 Sep  7 11:19 Videos
+
+2. chmod:
+ranjit@ranjit-Vostro-1540:~$ sudo chmod +r+r+r world.txt
+ranjit@ranjit-Vostro-1540:~$ ls -l
+total 60
+--w--w--w- 1 ranjit ranjit     0 Sep  7 11:54 abc.txt
+drwxr-xr-x 2 ranjit ranjit  4096 Sep  7 11:19 Desktop
+drwxr-xr-x 2 ranjit ranjit  4096 Sep  7 14:56 Documents
+drwxr-xr-x 2 ranjit ranjit  4096 Sep  7 14:32 Downloads
+-rw-r--r-- 1 ranjit ranjit  8980 Sep  7 11:11 examples.desktop
+-rw-r--r-- 1 ranjit ranjit 10240 Sep  7 14:44 file.tar
+drwxr-xr-x 2 ranjit ranjit  4096 Sep  7 11:19 Music
+drwxr-xr-x 2 ranjit ranjit  4096 Sep  7 11:19 Pictures
+drwxr-xr-x 2 ranjit ranjit  4096 Sep  7 11:19 Public
+-r--r--r-- 1 ranjit ranjit     0 Sep  7 11:27 sample.txt
+-rw-r--r-- 1 ranjit ranjit     0 Sep  7 14:42 simple.tar
+drwxr-xr-x 2 ranjit ranjit  4096 Sep  7 11:19 Templates
+drwxr-xr-x 2 ranjit ranjit  4096 Sep  7 11:19 Videos
+-rw-r--r-- 1 ranjit ranjit     0 Sep  7 11:55 world2.txt
+-rwxrwxrwx 1 ranjit ranjit    12 Sep  7 11:45 world.txt
+3. reference :
+ranjit@ranjit-Vostro-1540:~$ chmod --reference=sample.txt abc.txt
+ranjit@ranjit-Vostro-1540:~$ ls -l
+total 60
+-r--r--r-- 1 ranjit ranjit     0 Sep  7 11:54 abc.txt
+drwxr-xr-x 2 ranjit ranjit  4096 Sep  7 11:19 Desktop
+drwxr-xr-x 2 ranjit ranjit  4096 Sep  7 15:03 Documents
+drwxr-xr-x 2 ranjit ranjit  4096 Sep  7 14:32 Downloads
+-rw-r--r-- 1 ranjit ranjit  8980 Sep  7 11:11 examples.desktop
+-rw-r--r-- 1 ranjit ranjit 10240 Sep  7 14:44 file.tar
+drwxr-xr-x 2 ranjit ranjit  4096 Sep  7 11:19 Music
+drwxr-xr-x 2 ranjit ranjit  4096 Sep  7 11:19 Pictures
+drwxr-xr-x 2 ranjit ranjit  4096 Sep  7 11:19 Public
+-r--r--r-- 1 ranjit ranjit     0 Sep  7 11:27 sample.txt
+-rw-r--r-- 1 ranjit ranjit     0 Sep  7 14:42 simple.tar
+drwxr-xr-x 2 ranjit ranjit  4096 Sep  7 11:19 Templates
+drwxr-xr-x 2 ranjit ranjit  4096 Sep  7 11:19 Videos
+-rw-r--r-- 1 ranjit ranjit     0 Sep  7 11:55 world2.txt
+-rwxrwxrwx 1 ranjit ranjit    12 Sep  7 11:45 world.txt
+
+__________________________________________________________________________________
+__________________________________________________________________________________
+Que 2 Type umask 000 and then create a file called world.txt containing the words hello world. Look at the permissions on the file. What's happened? Now type umask 022 and create a file called world2.txt. When might this feature be useful?
+
+-->>
+ranjit@ranjit-Vostro-1540:~$ umask 000
+ranjit@ranjit-Vostro-1540:~$ touch world.txt
+ranjit@ranjit-Vostro-1540:~$ vi world.txt
+ranjit@ranjit-Vostro-1540:~$ ls -l
+total 48
+drwxr-xr-x 2 ranjit ranjit 4096 Sep  7 11:19 Desktop
+drwxr-xr-x 2 ranjit ranjit 4096 Sep  7 11:43 Documents
+drwxr-xr-x 2 ranjit ranjit 4096 Sep  7 11:19 Downloads
+-rw-r--r-- 1 ranjit ranjit 8980 Sep  7 11:11 examples.desktop
+drwxr-xr-x 2 ranjit ranjit 4096 Sep  7 11:19 Music
+drwxr-xr-x 2 ranjit ranjit 4096 Sep  7 11:19 Pictures
+drwxr-xr-x 2 ranjit ranjit 4096 Sep  7 11:19 Public
+-r--r--r-- 1 ranjit ranjit    0 Sep  7 11:27 sample.txt
+drwxr-xr-x 2 ranjit ranjit 4096 Sep  7 11:19 Templates
+drwxr-xr-x 2 ranjit ranjit 4096 Sep  7 11:19 Videos
+-rw-rw-rw- 1 ranjit ranjit   12 Sep  7 11:45 world.txt
+
+by default umask value of any folder is 0777. we give initially umask 000. it's give read write permission to all users
+
+*************************************************************************
+umask 022 only allow owner to write a data. and everyone can read the data. A umask of 002 is good when you share data with other users in the same group. Members of your group can create and modify data files; those outside your group can read data file, but cannot modify it.
+
+ranjit@ranjit-Vostro-1540:~$ umask 022
+ranjit@ranjit-Vostro-1540:~$ touch world2.txt
+ranjit@ranjit-Vostro-1540:~$ ls -l
+total 48
+-rw-rw-rw- 1 ranjit ranjit    0 Sep  7 11:54 abc.txt
+drwxr-xr-x 2 ranjit ranjit 4096 Sep  7 11:19 Desktop
+drwxr-xr-x 2 ranjit ranjit 4096 Sep  7 11:43 Documents
+drwxr-xr-x 2 ranjit ranjit 4096 Sep  7 11:19 Downloads
+-rw-r--r-- 1 ranjit ranjit 8980 Sep  7 11:11 examples.desktop
+drwxr-xr-x 2 ranjit ranjit 4096 Sep  7 11:19 Music
+drwxr-xr-x 2 ranjit ranjit 4096 Sep  7 11:19 Pictures
+drwxr-xr-x 2 ranjit ranjit 4096 Sep  7 11:19 Public
+-r--r--r-- 1 ranjit ranjit    0 Sep  7 11:27 sample.txt
+drwxr-xr-x 2 ranjit ranjit 4096 Sep  7 11:19 Templates
+drwxr-xr-x 2 ranjit ranjit 4096 Sep  7 11:19 Videos
+-rw-r--r-- 1 ranjit ranjit    0 Sep  7 11:55 world2.txt
+-rw-rw-rw- 1 ranjit ranjit   12 Sep  7 11:45 world.txt
+____________________________________________________________________________________________________________
+___________________________________________________________________________________________________________
+Que 3.Use find to display the names of all files in the /home subdirectory tree. Can you do this without displaying errors for files you can't read?
+-->>
+Yes, we can display files which we can't read
+ranjit@ranjit-Vostro-1540:~$ find /home | grep -v error
+F33
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/582BD56D7752F5951DC0201ED8BB7CA1285D6684
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/9EE774E1A39DD0EBF04565BD2F9E01496930728E
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/0E62144B835B40404934FAA40917A759C45F38EE
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/21C1E38F8497619875A073779CDCBB298640E2B2
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/E4CE910DBD17E6F7463D57941C0B5DAD2CAB93FC
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/A0B6704EEEC07388EA26B0E7756C2715AB12D651
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/B40EC7E829D9223CA249CB69A3704CE06D696AE9
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/CFC89A83C20FF0CE7573D856EF8E17C2590DA509
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/7821E9A8F47B4732232E05E09FF2DFB29F908340
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/9429B56D2E5CF728ED11D215A8B7A8F58255D43E
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/FD7CACA29C9917BB63DA065469333842252F669D
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/2357A8EB94C1335ED31A8BE55341799C308DE400
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/5E4954707B44E5A4B4ACF5F22B52219A1DCA477F
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/847B889927EF3733CE747955F26AA078361C3F55
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/75F46097A0866766F445878776AF741B98A881BC
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/70F36DDE102AD4B6575DA9EACA4F09F10CDE8C2C
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/D66928BC30082AE4D45E040253B91875110615A2
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/B78116A107C142C5BDCEBFB8999053994C2CC406
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/D4513D470E79D455CAF25477A010305A45A0D376
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/76AD8FA166151DA906245C5B4C7401D15D494AAE
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/793B27BA59D8A7B2BA6678FEAB19C5DA43E97721
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/D26B10F9393DC076D92DE2089E7DB01A48238D52
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/F1DF293200AB3D1A1CCEA153C26B66BE19966490
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/DB11BB04DBABBEED1877D68FDFB7B20A20F3D7A1
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/57E662573FD9E42D3972BE92D3DF0557C7B2E836
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/D24C8DADA6E312AB51DBEC10AA61786B3D1D04E0
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/F0B0760CA5A4CA1C8E3870F69FF9C6ABAD0D4331
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/2C67400F0863767E30523A2372F5F776E977D7D7
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/9DA8A108788B3214EF1F99FEA0FE868C83112BD7
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/EA922C644AED3E82EF17A4212ACB67BF66BD50EC
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/CA302F67F21FC2283B285F13F48B45CF1FFE8A69
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/3E49558CE091444C8AE6FFB2FE8DB9DE521A6F2E
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/791CDA3590E82CE7F8FF1CD07EF597B15A9C3BEC
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/43266F9252A9B27E0735473CD06E9F76089B4BF4
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/30684878758B51613FBA01ECA5E0DBAAD6196FB8
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/5D63DC439E0A916EEED8CCF1A90308D88312A46B
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/A79F23CD7D199D02EC42AE920074C8FA7D82605D
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/3BE647319B14BE1D0CFF541BAE80244A8C031325
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/CD054398D4C8F7E0F984E5C9895F3CE31CC87DD9
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/844B2CAE336FA5D601628E89B730F198A02899A9
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/AF27EF4FE6BDA70649F76F65508C8CBE398EC57B
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/D972FD3C89F57726178972E6D0876A661E89E065
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/BB649871EC4B0ED29F1EE47A8A2729C402D6FCF9
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/23235518CD38CB3D10B0AC591123694C9D398B7F
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/C15002676564D09318DDB64611F7F3F111816C19
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/268AE88F6E7E29FB5504A651FF1FA3F40C5E2DE2
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/F4754352506FC40628E43C7372BFD1C938C0D50D
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/77BEB77D9CC969C39958CC4A5EBACAF025E09EA4
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/4274542B6D6F6E1F1675338CF0BC865F4DF0B99C
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/8F5C59AEFA265B0B8DF5251A082B1FE4977ABF58
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/60B8174D9F2F374E36928368EB1A8F7344EAD5E6
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/E06F8B013E0B785A7FE3965E69A5C0E57CEA7C57
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/463250461A1A09AED1F8FDA01A10A08C5F697C07
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/626A9224F29298EBF0C3D68167102493276CDCF9
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/651AC8ADA2C30C8CF54A82D997B140706DD8DC8E
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/7441C9038AA50B76AB21960F5D5191380B75D77C
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/22131C0E00D453671CB471BE57C95FA846CF316B
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/3947851876FD1A8AA2B73E6512408EF4D0198ACD
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/723CF31A2EC82242360DA9B4E381B132F0D7B789
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/95B0B4867B920EA38C9CB5F15B1C2D34EF053CEF
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/4CAB6DB1866E128911BDAEA21740C1FB346EF073
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/05838122554FC2EB228E1110A0FC098513EBB905
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/4C1F99847F098E2404FD4980C2F609817ED342E7
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/4238786CB87B503754EE13346F30AE3FCE28174F
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/0D3923AF6D26D47A7B791E2BA454C79E2D7D6F43
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/4C22695F3AE5C388A7EE93BBD5692DE5F0431683
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/69C4801290C9E90652593307470FAA50C70F7E53
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/90038FB2CA1659B84C5539FB6F64B5958CB43400
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/C163C2914BBE75907A27C48CD4ABB8589F8B80F1
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/0A1FF98ED76AC01DE0B224A1B95A2E45BA2A11D0
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/C3E693587293D62C80E434CD576002B08D01589F
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/E5ABD5E439F70B4BED41881D931226758D255EE0
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/A7566ED2E6757C4DB80AF4A0E8B6A068B7C32CAA
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/8266148099961C4F085B87F182B1DE50F571BAC5
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/BFFC171B242C4F290004FFC7494B10BAF0B2093D
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/2E6A709C6E39E81E74FF3EC597735FFE9CF563AC
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/CF62863954B47D0F73FD568437F8D6B3343C0C68
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/87862ECB18008E532FAC56DEDC936075606438ED
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/56BBFA820160EEB05B225F7D9D6EBAB91F51628E
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/3F987332534881E8FEC60EBA10068BE30D150C83
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/D9593EEE39E7BD5A3C7D1EB13FE55F218937F767
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/1765036E4BE3683FA00CE9BB769F35AB137B2564
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/B55D502052C75B479C37D2F9B8318F0F6F8E77F6
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/093A9343E0DD6B48A36BCDDCD92A0249647C9B1A
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/3070BF83995561123DE99A516530010534167999
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/6F2A475EFC7539FAC803535DF7BE89852ABF7AB0
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/88C1BB7273F8610D392B3FE88DB119994FDCB7B4
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/65E65EDF11DF86F96B8A849FA8BE8942573C59A6
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/C3125161C72B774D43713C01F90E4DB80ADCFBC2
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/E7BABEE48D99358F20B614182B4CAB772FEC956F
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/90D887C125C1E09428B0CDD54EA3AFBA30680AAE
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/DA8B1C01FE47096B9C16B275FD5B34E24C30F4F7
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/4B9C6C2C3051E0D8360345D34AE8A43466DEC6B5
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/7E9789E681F526A0DE15EA4E795A78BF1DECE6C4
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/9831891848987C0CE9B7009CFA8E634C585CFED5
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/214A5787A35ABBD03EF41BF5714D43E652F09991
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/FAF2453E3AA8AC3605552ACB8048CBC8B50DB4F7
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/36942DB0FD2F7AA3FB4C6C20A336FB28261A9EC3
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/87A08209965C20F877A29C414BD83E8E5D93C213
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/B6C04FAF45F101E9F217DD5CEFBCD18AD99B090D
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/9BC52F5FE32072DA84688A879336B2CB256110A0
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/0193FD2007B16A22FC0542CB58D0DAB4E727F8AD
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/D11A27A1E56B6DC6A94D028EDE7DC210520FDC1E
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/52399D8534A7C27CFD3842A03073CE3F5932EA04
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/8B3FF6E011E8729B7F34A6C6347EB5AAA101D094
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/43F9BE1057B01157C9C5DE708242495CC7886DA2
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/00A7783AFAEB0A265727D7F9195754613AB10B69
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/DBBF684ADA34E902A33425B00E59E66EBF593171
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/310DF04046AD6AE75EC186668D1D0B1F2638858B
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/B0049D0A560899CF1E261B657F9BD71F70B1F2F1
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/21B443EDD3581E51E0CEE9FF5F5F44C4434D8691
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/1FCB7CD729B6260FC854A8CF3E5B5256ED3D74B8
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/EF1A42B2896D934AD83679E603A281512FABF524
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/558AE89AB6F8B8BEB6BF0B7D51F1AA61E280E492
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/642D0AD0B8F5CA5C402E88E84BE07735581FC3CA
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/B828BED4796E716BBBB9E9857330A289513C14E4
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/116F0792F15205D7A41F4606005A22B8C91080D0
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/564369F7D8AAE735685B490297727ABE56C746E3
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/5DB884F886D86B920386E67AAF322AC76A203ECD
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/B7F48E56ED233A2FE51DE1AC8823A964CE69FEF0
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/FE906215EAA1DA33D3ACC6EA6ED701FB87F28CC5
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/E4B21083ED4AF155FBB88B74BD986AE7365283E9
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/1355867C7C8ACB52152CDC249B64D742CC40340D
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/C485C00974CC50C8E7994D3810BE336E829E3F7D
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/E03ADC85B17DB7F17EE9BECD1EC0CC18B9E8A94D
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/A9D353D476FFB1CE1C67223CD990E0C178319535
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/91437BAA5AC5DAA50B26D9894F44EDA2F549B1E7
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/EB2AE9AE3D0A7AB8B5957883CCFC8CE6129B4DDE
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/29460417C2BADB479F5C2B370E7793B38DC60419
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/E045A806E68E864631282CA426A46CD8CC6C517A
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/64247DD46BF8DB2390B329E27B1BCFF46449B860
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/795C23B24831171BE1B936219EC27977512D686F
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/E7C71FAB8337063A10801AC7FFF08CDF6BFE1CCE
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/9B942BF5AE6721B4D561283A33C6EFB0E23B34F0
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/755EA71774B82AA6D7CEF5561C92CBB8CC0B8F15
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/449F943382482551D70FB8268C08D0BEFC9FA7A4
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/0EDDF8C091E2FED62E44BEDDDC1723F5BF38FE4F
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/010598F2E879BCE9053207316736339CDD08BFA0
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/0B87B0DC0E60E58C3A3BFA76D8BF3CCC66995ADA
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/0AD2A283DD437AAB1EE69AF5FAA301FCF787BB5C
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/9523A419238781253AB95ACFF31FF0DA9BE39AC5
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/758919DCFC7A3D8DF9E2807F9849AB243195392A
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/C21E011524C76BC6791488ED0387DE1FA1E2E062
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/0CE9E32CD9BE2BD6E6C8E340DCBC6E84EC0CE6D7
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/2559A0A9CA5B6B5DC7F79307034D2395534E031F
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/899AB9994AE771296D7E80373402B209CB01B879
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/13596033060384A44E434DE775A63CB389C6E121
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/0CF41DB174DEB8989CFF05411C806286069FE51C
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/FCA2CF2A4F559B8495A3AA271E54AC5A587671F4
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/6BFF9498542C63E2C5A0F692C2A166F3F45C4830
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/AA7FF43D35AE762E063373C587748B227B442A83
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/1833D039BFEF4C7D1C5DAB3B3A0B35791A3713A6
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/11E58792D8DC5EA28692ADBF29DD19A7B3AD6516
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/F6AA64F1A3B554125F6BEE47C8A95DF173A6B214
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/9487A42CD1A8269F0F8DE550A13DB27E4A1E4A0B
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/FC02D640C968E90564E8DF750E834C7463F502CA
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/20209C8810E2339FA54A3335303546A5FE3DB81A
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/D315899156CC407B971456D9EB2A8C0EEA44B490
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/9E7D7100FC87011D6B6AB97DA14DC98E9BE53B5D
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/E55F2198E6560A2995B83FE1FAAB2F8E820371CE
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/A77A4F0D3A3FCE043CE77AF7FFD5DE259F65C100
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/36966B87060BE362275DC5F979284A2AAE74A317
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/B0C85A4EE3886E651A30E9B89C1DACC53F489AB3
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/8578780B485AC0D0632517B4701BFACD0B015323
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/A36F1282CE021F2D739DFA515DFE81EB699A25A3
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/40CDE72809093DCEB9B2737524E0F3CD39F1B2D3
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/D2E437810EAC049D4263C14A24F5D871D0E062A0
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/67B449464BA2AE6AEB10F7126D4AEB05877CBA79
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/331E29628303D482B5038766FA741CD0ABEA63EC
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/6EAC9F537E58A60F83F8E2E88A1281D40EA5F678
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/AFB26439B65E71AB0C5CE5E7BCF1DDABCA9A4775
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/5B8B4E8A6B0D38121A09BBEF949D5B98E03F3C7E
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/DA836A332E80646014229621272AF00FD409AAD1
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/0688DFFC04AF72BBB0B8D17691C1FA7096B3AFA0
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/51782A740007A2A1151DBD83A96DE784C792AA6C
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/5CF04F79B6E53DEF3814259CDE4AB14C1C720715
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/0245CD1FDE59E4B6F4D891148E579995374BB3E7
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/E818A3F0BE8C66F92A4C2C68034AB0BD63D61A93
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/E8BEA96D436E9F28379B1D6893A788229A90BE24
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/D4677EA70A0D6CB160EF3ADCB685B30A0F229F07
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/620ABB6495D430D27170B087E235253E52ECB158
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/534E13B1A7177A5A67BE6D1B09A5407D0CB7AFAB
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/D951714CF7A2A411BD8E1A01C333F0F5E460438C
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/A4B8CD92780AFA38E7A515212D8783D763519239
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/B5C3109D53713A832971D24FDC110840B57CEBCE
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/38A0C69B490E3ED387CA76F4D434FF1848BA946E
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/CC4146B06D70972EBADAF2F2117945036810FE0B
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/3A3B8FFD4C08583270073C3853B3B8BF606F87DC
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/9470CA473E7C364BBB10D64BBDC172655FC06887
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/08979C4E5E34ED6D25BA0ED22CFADD2B06421C62
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/1FC431F3C9DA32A2EEC21EAF71ADB829FE6C63B6
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/930CABBA57EC8D6F43098520FDF5443B9E9DF0B8
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/E9014D3A3C480FC314D2166AEAC35201AF24AF31
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/EC5EAEFF46A96E36F4E3B79A419CC7C903C9648D
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/0772E085C41B063F1809A98A9C915867C570BD3A
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/07EB9A00FBF4383DFBB145D39208DE0188255B06
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/66E741C8F38C149F199396C6931E7B9A36FBED87
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/F85EFD373C41E9807595BAF27B617E361986933C
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/entries/F4B514075D6C5F623332CF3ACB24A87B9E23DE46
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/cache2/index
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/thumbnails
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/thumbnails/a6b53fddfda3bf786504f948015f0527.png
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/thumbnails/820555137ef50f264b43d89704eb5094.png
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/thumbnails/c7929cf22a493bb127c6fbadc4106175.png
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/thumbnails/735be8740e85e20203419ab10cdf541f.png
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/thumbnails/6fc9aee022f7e4e8653946236186766a.png
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/thumbnails/4550e4c2e4d3eed8e3b77c52533466d2.png
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/thumbnails/e535c5bd2bdb3f2ce13993b08385e626.png
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/thumbnails/e87ae1c3d4c776a0505a6d8f1e317d2e.png
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/thumbnails/5602e1f7fbd2fd86f8f1d62d1a7caf56.png
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/thumbnails/9976ec9cb106826cae03d0bc6dd1300d.png
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/mozstd-track-digest256.cache
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/goog-phish-shavar.sbstore
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/test-phish-simple.cache
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/goog-phish-shavar.cache
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/goog-badbinurl-shavar.pset
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/test-trackwhite-simple.cache
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/goog-badbinurl-shavar.sbstore
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/goog-malware-shavar.sbstore
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/test-track-simple.pset
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/mozstd-trackwhite-digest256.pset
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/test-trackwhite-simple.sbstore
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/test-trackwhite-simple.pset
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/goog-malware-shavar.cache
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/test-malware-simple.pset
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/test-track-simple.sbstore
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/test-phish-simple.sbstore
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/goog-unwanted-shavar.pset
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/mozstd-trackwhite-digest256.sbstore
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/mozstd-track-digest256.sbstore
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/goog-unwanted-shavar.sbstore
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/goog-phish-shavar.pset
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/test-unwanted-simple.cache
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/test-malware-simple.sbstore
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/test-unwanted-simple.sbstore
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/mozstd-trackwhite-digest256.cache
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/test-unwanted-simple.pset
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/test-track-simple.cache
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/test-phish-simple.pset
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/mozstd-track-digest256.pset
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/goog-badbinurl-shavar.cache
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/test-malware-simple.cache
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/goog-malware-shavar.pset
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/goog-unwanted-shavar.cache
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/frequencyCap.json
+/home/ranjit/world.txt
+/home/ranjit/Videos
+/home/ranjit/.local
+/home/ranjit/.local/share
+/home/ranjit/.local/share/.converted-launchers
+/home/ranjit/.local/share/unity-settings-daemon
+/home/ranjit/.local/share/unity-settings-daemon/input-sources-converted
+/home/ranjit/.local/share/sounds
+/home/ranjit/.local/share/applications
+/home/ranjit/.local/share/session_migration-ubuntu
+/home/ranjit/.local/share/nautilus
+/home/ranjit/.local/share/nautilus/scripts
+/home/ranjit/.local/share/evolution
+/home/ranjit/.local/share/evolution/tasks
+/home/ranjit/.local/share/evolution/tasks/system
+/home/ranjit/.local/share/evolution/tasks/system/tasks.ics
+/home/ranjit/.local/share/evolution/tasks/trash
+/home/ranjit/.local/share/evolution/memos
+/home/ranjit/.local/share/evolution/memos/trash
+/home/ranjit/.local/share/evolution/mail
+/home/ranjit/.local/share/evolution/mail/trash
+/home/ranjit/.local/share/evolution/calendar
+/home/ranjit/.local/share/evolution/calendar/system
+/home/ranjit/.local/share/evolution/calendar/system/calendar.ics
+/home/ranjit/.local/share/evolution/calendar/trash
+/home/ranjit/.local/share/evolution/addressbook
+/home/ranjit/.local/share/evolution/addressbook/trash
+/home/ranjit/.local/share/keyrings
+/home/ranjit/.local/share/keyrings/user.keystore.D1E85Y
+/home/ranjit/.local/share/keyrings/user.keystore.PM3F6Y
+/home/ranjit/.local/share/keyrings/login.keyring
+/home/ranjit/.local/share/keyrings/user.keystore
+/home/ranjit/.local/share/keyrings/user.keystore.M2N85Y
+/home/ranjit/.local/share/recently-used.xbel
+/home/ranjit/.local/share/telepathy
+/home/ranjit/.local/share/telepathy/mission-control
+/home/ranjit/.local/share/telepathy/mission-control/accounts.cfg
+/home/ranjit/.local/share/gsettings-data-convert
+/home/ranjit/.local/share/zeitgeist
+/home/ranjit/.local/share/zeitgeist/activity.sqlite-wal
+/home/ranjit/.local/share/zeitgeist/activity.sqlite-shm
+/home/ranjit/.local/share/zeitgeist/activity.sqlite
+/home/ranjit/.local/share/zeitgeist/fts.index
+/home/ranjit/.local/share/zeitgeist/fts.index/termlist.baseA
+/home/ranjit/.local/share/zeitgeist/fts.index/record.baseB
+/home/ranjit/.local/share/zeitgeist/fts.index/postlist.DB
+/home/ranjit/.local/share/zeitgeist/fts.index/record.DB
+/home/ranjit/.local/share/zeitgeist/fts.index/position.DB
+/home/ranjit/.local/share/zeitgeist/fts.index/position.baseB
+/home/ranjit/.local/share/zeitgeist/fts.index/record.baseA
+/home/ranjit/.local/share/zeitgeist/fts.index/flintlock
+/home/ranjit/.local/share/zeitgeist/fts.index/termlist.baseB
+/home/ranjit/.local/share/zeitgeist/fts.index/iamchert
+/home/ranjit/.local/share/zeitgeist/fts.index/position.baseA
+/home/ranjit/.local/share/zeitgeist/fts.index/termlist.DB
+/home/ranjit/.local/share/zeitgeist/fts.index/postlist.baseA
+/home/ranjit/.local/share/zeitgeist/fts.index/postlist.baseB
+/home/ranjit/.local/share/icc
+/home/ranjit/.local/share/gvfs-metadata
+/home/ranjit/.local/share/gvfs-metadata/home-3c48a638.log
+/home/ranjit/.local/share/gvfs-metadata/home
+/home/ranjit/.local/share/gvfs-metadata/root-b6a416d1.log
+/home/ranjit/.local/share/gvfs-metadata/root
+/home/ranjit/.Xauthority
+/home/ranjit/.bash_history
+ranjit@ranjit-Vostro-1540:~$ 
+
+____________________________________________________________________________________________________________
+____________________________________________________________________________________________________________
+
+Que 4 Use find to display the names of all files in the system that are bigger than 1MB.
+-->>
+ranjit@ranjit-Vostro-1540:~$ find . -size +1M
+./.mozilla/firefox/6u49m1bs.default/gmp-gmpopenh264/1.5.3/libgmpopenh264.so
+./.mozilla/firefox/6u49m1bs.default/healthreport.sqlite-wal
+./.mozilla/firefox/6u49m1bs.default/places.sqlite
+./.mozilla/firefox/6u49m1bs.default/healthreport.sqlite
+./.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/goog-phish-shavar.sbstore
+./.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/goog-malware-shavar.sbstore
+
+_____________________________________________________________________________________________________________
+_____________________________________________________________________________________________________________
+5. Use ‘find and file’ to display all files in the /home subdirectory tree, as well as a guess at what sort of a file they are. Do this in two different ways.
+-->>
+1. Using find to display all files in /home subdirectory tree which are different type files which is given below:
+
+ranjit@ranjit-Vostro-1540:~$ find /home -name "*.*" -print
+/home/ranjit/Downloads/LINUX LAB level 0.docx
+/home/ranjit/.profile
+/home/ranjit/.xinputrc
+/home/ranjit/.mozilla
+/home/ranjit/.mozilla/firefox/6u49m1bs.default
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/webappsstore.sqlite
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/extensions.json
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/revocations.txt
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/places.sqlite-wal
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/blocklist.xml
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/addons.json
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/datareporting/archived/2017-09/1504764296530.7c6ed3aa-3ab5-4081-bacd-ac04a0eca439.main.jsonlz4
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/datareporting/state.json
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/datareporting/session-state.json
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/cookies.sqlite
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/crashes/store.json.mozlz4
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/secmod.db
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/search.json
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/cert8.db
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/places.sqlite-shm
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/gmp-gmpopenh264/1.5.3
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/gmp-gmpopenh264/1.5.3/libgmpopenh264.so
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/gmp-gmpopenh264/1.5.3/gmpopenh264.info
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/permissions.sqlite
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/compatibility.ini
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/bookmarkbackups/bookmarks-2017-09-07_20_1VglEeQVdqrhKkmBIAaFiw==.jsonlz4
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/healthreport.sqlite-wal
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/webappsstore.sqlite-shm
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/pluginreg.dat
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/mimeTypes.rdf
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/cookies.sqlite-shm
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/formhistory.sqlite
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/sessionstore-backups/recovery.js
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/sessionstore-backups/recovery.bak
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/search-metadata.json
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/xulstore.json
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/sessionCheckpoints.json
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/healthreport.sqlite-shm
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/prefs.js
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/.parentlock
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/times.json
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/places.sqlite
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/healthreport.sqlite
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/cookies.sqlite-wal
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/key3.db
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/SiteSecurityServiceState.txt
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/webappsstore.sqlite-wal
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/storage/permanent/moz-safe-about+home/.metadata
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/storage/permanent/moz-safe-about+home/idb/818200132aebmoouht.sqlite
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/storage/permanent/moz-safe-about+home/idb/818200132aebmoouht.files
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/storage/permanent/chrome/.metadata
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/storage/permanent/chrome/idb/2918063365piupsah.files
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/storage/permanent/chrome/idb/2918063365piupsah.sqlite
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/webapps/webapps.json
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/content-prefs.sqlite
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/extensions.ini
+/home/ranjit/.mozilla/firefox/profiles.ini
+/home/ranjit/world2.txt
+/home/ranjit/.config
+/home/ranjit/.config/pulse/701f25c0f9c38c7bde893ba559b0ddb5-card-database.tdb
+/home/ranjit/.config/pulse/701f25c0f9c38c7bde893ba559b0ddb5-device-volumes.tdb
+/home/ranjit/.config/pulse/701f25c0f9c38c7bde893ba559b0ddb5-stream-volumes.tdb
+/home/ranjit/.config/libaccounts-glib/accounts.db
+/home/ranjit/.config/enchant/en.exc
+/home/ranjit/.config/enchant/en.dic
+/home/ranjit/.config/unity/first_run.stamp
+/home/ranjit/.config/user-dirs.dirs
+/home/ranjit/.config/gtk-3.0
+/home/ranjit/.config/user-dirs.locale
+/home/ranjit/.config/libreoffice/4/user/registrymodifications.xcu
+/home/ranjit/.config/libreoffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.executable.PackageRegistryBackend
+/home/ranjit/.config/libreoffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.script.PackageRegistryBackend
+/home/ranjit/.config/libreoffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend
+/home/ranjit/.config/libreoffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/backenddb.xml
+/home/ranjit/.config/libreoffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.bundle.PackageRegistryBackend
+/home/ranjit/.config/libreoffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.sfwk.PackageRegistryBackend
+/home/ranjit/.config/libreoffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.help.PackageRegistryBackend
+/home/ranjit/.config/libreoffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.help.PackageRegistryBackend/backenddb.xml
+/home/ranjit/.config/libreoffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.component.PackageRegistryBackend
+/home/ranjit/.config/libreoffice/4/user/extensions/shared/registry/com.sun.star.comp.deployment.executable.PackageRegistryBackend
+/home/ranjit/.config/libreoffice/4/user/extensions/shared/registry/com.sun.star.comp.deployment.script.PackageRegistryBackend
+/home/ranjit/.config/libreoffice/4/user/extensions/shared/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend
+/home/ranjit/.config/libreoffice/4/user/extensions/shared/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/backenddb.xml
+/home/ranjit/.config/libreoffice/4/user/extensions/shared/registry/com.sun.star.comp.deployment.bundle.PackageRegistryBackend
+/home/ranjit/.config/libreoffice/4/user/extensions/shared/registry/com.sun.star.comp.deployment.sfwk.PackageRegistryBackend
+/home/ranjit/.config/libreoffice/4/user/extensions/shared/registry/com.sun.star.comp.deployment.help.PackageRegistryBackend
+/home/ranjit/.config/libreoffice/4/user/extensions/shared/registry/com.sun.star.comp.deployment.help.PackageRegistryBackend/backenddb.xml
+/home/ranjit/.config/libreoffice/4/user/extensions/shared/registry/com.sun.star.comp.deployment.component.PackageRegistryBackend
+/home/ranjit/.config/libreoffice/4/user/extensions/tmp/registry/com.sun.star.comp.deployment.executable.PackageRegistryBackend
+/home/ranjit/.config/libreoffice/4/user/extensions/tmp/registry/com.sun.star.comp.deployment.script.PackageRegistryBackend
+/home/ranjit/.config/libreoffice/4/user/extensions/tmp/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend
+/home/ranjit/.config/libreoffice/4/user/extensions/tmp/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/backenddb.xml
+/home/ranjit/.config/libreoffice/4/user/extensions/tmp/registry/com.sun.star.comp.deployment.bundle.PackageRegistryBackend
+/home/ranjit/.config/libreoffice/4/user/extensions/tmp/registry/com.sun.star.comp.deployment.sfwk.PackageRegistryBackend
+/home/ranjit/.config/libreoffice/4/user/extensions/tmp/registry/com.sun.star.comp.deployment.help.PackageRegistryBackend
+/home/ranjit/.config/libreoffice/4/user/extensions/tmp/registry/com.sun.star.comp.deployment.help.PackageRegistryBackend/backenddb.xml
+/home/ranjit/.config/libreoffice/4/user/extensions/tmp/registry/com.sun.star.comp.deployment.component.PackageRegistryBackend
+/home/ranjit/.config/libreoffice/4/user/database/biblio/biblio.dbf
+/home/ranjit/.config/libreoffice/4/user/database/biblio/biblio.dbt
+/home/ranjit/.config/libreoffice/4/user/database/biblio.odb
+/home/ranjit/.config/libreoffice/4/user/database/evolocal.odb
+/home/ranjit/.config/libreoffice/4/user/basic/script.xlc
+/home/ranjit/.config/libreoffice/4/user/basic/dialog.xlc
+/home/ranjit/.config/libreoffice/4/user/basic/Standard/Module1.xba
+/home/ranjit/.config/libreoffice/4/user/basic/Standard/dialog.xlb
+/home/ranjit/.config/libreoffice/4/user/basic/Standard/script.xlb
+/home/ranjit/.config/libreoffice/4/user/config/javasettings_Linux_X86_64.xml
+/home/ranjit/.config/libreoffice/4/user/config/standard.sod
+/home/ranjit/.config/libreoffice/4/user/config/standard.soe
+/home/ranjit/.config/libreoffice/4/user/config/gallery.soc
+/home/ranjit/.config/libreoffice/4/user/config/standard.soh
+/home/ranjit/.config/libreoffice/4/user/config/modern.sog
+/home/ranjit/.config/libreoffice/4/user/config/hatching.soh
+/home/ranjit/.config/libreoffice/4/user/config/web.soc
+/home/ranjit/.config/libreoffice/4/user/config/classic.sog
+/home/ranjit/.config/libreoffice/4/user/config/styles.sod
+/home/ranjit/.config/libreoffice/4/user/config/tango.soc
+/home/ranjit/.config/libreoffice/4/user/config/libreoffice.soc
+/home/ranjit/.config/libreoffice/4/user/config/soffice.cfg
+/home/ranjit/.config/libreoffice/4/user/config/standard.soc
+/home/ranjit/.config/libreoffice/4/user/config/autotbl.fmt
+/home/ranjit/.config/libreoffice/4/user/config/palette.soc
+/home/ranjit/.config/libreoffice/4/user/config/scribus.soc
+/home/ranjit/.config/libreoffice/4/user/config/standard.sob
+/home/ranjit/.config/libreoffice/4/user/config/cmyk.soc
+/home/ranjit/.config/libreoffice/4/user/config/arrowhd.soe
+/home/ranjit/.config/libreoffice/4/user/config/html.soc
+/home/ranjit/.config/libreoffice/4/user/config/standard.sog
+/home/ranjit/.config/libreoffice/4/user/gallery/sg30.sdv
+/home/ranjit/.config/libreoffice/4/user/gallery/sg30.thm
+/home/ranjit/.config/libreoffice/4/user/uno_packages/cache/registry/com.sun.star.comp.deployment.executable.PackageRegistryBackend
+/home/ranjit/.config/libreoffice/4/user/uno_packages/cache/registry/com.sun.star.comp.deployment.script.PackageRegistryBackend
+/home/ranjit/.config/libreoffice/4/user/uno_packages/cache/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend
+/home/ranjit/.config/libreoffice/4/user/uno_packages/cache/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/backenddb.xml
+/home/ranjit/.config/libreoffice/4/user/uno_packages/cache/registry/com.sun.star.comp.deployment.bundle.PackageRegistryBackend
+/home/ranjit/.config/libreoffice/4/user/uno_packages/cache/registry/com.sun.star.comp.deployment.sfwk.PackageRegistryBackend
+/home/ranjit/.config/libreoffice/4/user/uno_packages/cache/registry/com.sun.star.comp.deployment.help.PackageRegistryBackend
+/home/ranjit/.config/libreoffice/4/user/uno_packages/cache/registry/com.sun.star.comp.deployment.help.PackageRegistryBackend/backenddb.xml
+/home/ranjit/.config/libreoffice/4/user/uno_packages/cache/registry/com.sun.star.comp.deployment.component.PackageRegistryBackend
+/home/ranjit/.config/libreoffice/4/user/uno_packages/cache/log.txt
+/home/ranjit/.config/libreoffice/4/user/autotext/mytexts.bau
+/home/ranjit/.config/libreoffice/4/.lock
+/home/ranjit/.bash_logout
+/home/ranjit/.gconf
+/home/ranjit/.gconf/apps/%gconf.xml
+/home/ranjit/.gconf/apps/nm-applet/%gconf.xml
+/home/ranjit/.gconf/apps/gnome-terminal/profiles/%gconf.xml
+/home/ranjit/.gconf/apps/gnome-terminal/profiles/Default/%gconf.xml
+/home/ranjit/.gconf/apps/gnome-terminal/%gconf.xml
+/home/ranjit/.bashrc
+/home/ranjit/abc.txt
+/home/ranjit/.xsession-errors
+/home/ranjit/sample.txt
+/home/ranjit/examples.desktop
+/home/ranjit/.ICEauthority
+/home/ranjit/Documents/Assignment.txt
+/home/ranjit/Documents/Assignment.txt~
+/home/ranjit/.cache
+/home/ranjit/.cache/compizconfig-1/fade.pb
+/home/ranjit/.cache/compizconfig-1/snap.pb
+/home/ranjit/.cache/compizconfig-1/grid.pb
+/home/ranjit/.cache/compizconfig-1/composite.pb
+/home/ranjit/.cache/compizconfig-1/scale.pb
+/home/ranjit/.cache/compizconfig-1/gnomecompat.pb
+/home/ranjit/.cache/compizconfig-1/core.pb
+/home/ranjit/.cache/compizconfig-1/workarounds.pb
+/home/ranjit/.cache/compizconfig-1/compiztoolbox.pb
+/home/ranjit/.cache/compizconfig-1/move.pb
+/home/ranjit/.cache/compizconfig-1/vpswitch.pb
+/home/ranjit/.cache/compizconfig-1/wall.pb
+/home/ranjit/.cache/compizconfig-1/ezoom.pb
+/home/ranjit/.cache/compizconfig-1/animation.pb
+/home/ranjit/.cache/compizconfig-1/mousepoll.pb
+/home/ranjit/.cache/compizconfig-1/resize.pb
+/home/ranjit/.cache/compizconfig-1/copytex.pb
+/home/ranjit/.cache/compizconfig-1/regex.pb
+/home/ranjit/.cache/compizconfig-1/unitymtgrabhandles.pb
+/home/ranjit/.cache/compizconfig-1/imgpng.pb
+/home/ranjit/.cache/compizconfig-1/opengl.pb
+/home/ranjit/.cache/compizconfig-1/expo.pb
+/home/ranjit/.cache/compizconfig-1/place.pb
+/home/ranjit/.cache/compizconfig-1/commands.pb
+/home/ranjit/.cache/compizconfig-1/decor.pb
+/home/ranjit/.cache/compizconfig-1/session.pb
+/home/ranjit/.cache/compizconfig-1/unityshell.pb
+/home/ranjit/.cache/fontconfig/CACHEDIR.TAG
+/home/ranjit/.cache/fontconfig/158c65c810c0d352a587f5be66058e87-le64.cache-4
+/home/ranjit/.cache/upstart/unity-settings-daemon.log
+/home/ranjit/.cache/upstart/gnome-keyring-ssh.log
+/home/ranjit/.cache/upstart/im-config.log
+/home/ranjit/.cache/upstart/window-stack-bridge.log
+/home/ranjit/.cache/upstart/update-notifier-release.log
+/home/ranjit/.cache/upstart/unity-panel-service.log
+/home/ranjit/.cache/upstart/ssh-agent.log
+/home/ranjit/.cache/upstart/indicator-power.log
+/home/ranjit/.cache/upstart/unity7.log
+/home/ranjit/.cache/upstart/indicator-sound.log
+/home/ranjit/.cache/upstart/gnome-session-Unity.log
+/home/ranjit/.cache/upstart/gnome-keyring-gpg.log
+/home/ranjit/.cache/upstart/dbus.log
+/home/ranjit/.cache/upstart/indicator-bluetooth.log
+/home/ranjit/.cache/gstreamer-1.0
+/home/ranjit/.cache/gstreamer-1.0/registry.x86_64.bin
+/home/ranjit/.cache/event-sound-cache.tdb.701f25c0f9c38c7bde893ba559b0ddb5.x86_64-pc-linux-gnu
+/home/ranjit/.cache/sso/sso-client.log
+/home/ranjit/.cache/sso/sso-client-gui.log
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/directoryLinks.json
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/startupCache/startupCache.8.little
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/thumbnails/a6b53fddfda3bf786504f948015f0527.png
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/thumbnails/820555137ef50f264b43d89704eb5094.png
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/thumbnails/c7929cf22a493bb127c6fbadc4106175.png
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/thumbnails/735be8740e85e20203419ab10cdf541f.png
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/thumbnails/6fc9aee022f7e4e8653946236186766a.png
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/thumbnails/4550e4c2e4d3eed8e3b77c52533466d2.png
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/thumbnails/e535c5bd2bdb3f2ce13993b08385e626.png
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/thumbnails/e87ae1c3d4c776a0505a6d8f1e317d2e.png
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/thumbnails/5602e1f7fbd2fd86f8f1d62d1a7caf56.png
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/thumbnails/9976ec9cb106826cae03d0bc6dd1300d.png
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/mozstd-track-digest256.cache
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/goog-phish-shavar.sbstore
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/test-phish-simple.cache
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/goog-phish-shavar.cache
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/goog-badbinurl-shavar.pset
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/test-trackwhite-simple.cache
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/goog-badbinurl-shavar.sbstore
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/goog-malware-shavar.sbstore
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/test-track-simple.pset
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/mozstd-trackwhite-digest256.pset
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/test-trackwhite-simple.sbstore
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/test-trackwhite-simple.pset
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/goog-malware-shavar.cache
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/test-malware-simple.pset
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/test-track-simple.sbstore
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/test-phish-simple.sbstore
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/goog-unwanted-shavar.pset
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/mozstd-trackwhite-digest256.sbstore
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/mozstd-track-digest256.sbstore
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/goog-unwanted-shavar.sbstore
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/goog-phish-shavar.pset
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/test-unwanted-simple.cache
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/test-malware-simple.sbstore
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/test-unwanted-simple.sbstore
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/mozstd-trackwhite-digest256.cache
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/test-unwanted-simple.pset
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/test-track-simple.cache
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/test-phish-simple.pset
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/mozstd-track-digest256.pset
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/goog-badbinurl-shavar.cache
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/test-malware-simple.cache
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/goog-malware-shavar.pset
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/safebrowsing/goog-unwanted-shavar.cache
+/home/ranjit/.cache/mozilla/firefox/6u49m1bs.default/frequencyCap.json
+/home/ranjit/world.txt
+/home/ranjit/.local
+/home/ranjit/.local/share/.converted-launchers
+/home/ranjit/.local/share/evolution/tasks/system/tasks.ics
+/home/ranjit/.local/share/evolution/calendar/system/calendar.ics
+/home/ranjit/.local/share/keyrings/user.keystore.PM3F6Y
+/home/ranjit/.local/share/keyrings/login.keyring
+/home/ranjit/.local/share/keyrings/user.keystore
+/home/ranjit/.local/share/keyrings/user.keystore.M2N85Y
+/home/ranjit/.local/share/recently-used.xbel
+/home/ranjit/.local/share/telepathy/mission-control/accounts.cfg
+/home/ranjit/.local/share/zeitgeist/activity.sqlite-wal
+/home/ranjit/.local/share/zeitgeist/activity.sqlite-shm
+/home/ranjit/.local/share/zeitgeist/activity.sqlite
+/home/ranjit/.local/share/zeitgeist/fts.index
+/home/ranjit/.local/share/zeitgeist/fts.index/termlist.baseA
+/home/ranjit/.local/share/zeitgeist/fts.index/record.baseB
+/home/ranjit/.local/share/zeitgeist/fts.index/postlist.DB
+/home/ranjit/.local/share/zeitgeist/fts.index/record.DB
+/home/ranjit/.local/share/zeitgeist/fts.index/position.DB
+/home/ranjit/.local/share/zeitgeist/fts.index/position.baseB
+/home/ranjit/.local/share/zeitgeist/fts.index/record.baseA
+/home/ranjit/.local/share/zeitgeist/fts.index/termlist.baseB
+/home/ranjit/.local/share/zeitgeist/fts.index/position.baseA
+/home/ranjit/.local/share/zeitgeist/fts.index/termlist.DB
+/home/ranjit/.local/share/zeitgeist/fts.index/postlist.baseA
+/home/ranjit/.local/share/zeitgeist/fts.index/postlist.baseB
+/home/ranjit/.local/share/gvfs-metadata/home-3c48a638.log
+/home/ranjit/.local/share/gvfs-metadata/root-b6a416d1.log
+/home/ranjit/.Xauthority
+/home/ranjit/.bash_history
+*****************************************************************************************
+2. Using another way
+ranjit@ranjit-Vostro-1540:~$ find /home | xargs file
+/home:                                                                                                                                                directory 
+/home/ranjit:                                                                                                                                        directory 
+/home/ranjit/Downloads:                                                                                                                              directory 
+/home/ranjit/Downloads/LINUX:                                                                                                                        ERROR: cannot open `/home/ranjit/Downloads/LINUX' (No such file or directory)
+LAB:                                                                                                                                                  ERROR: cannot open `LAB' (No such file or directory)
+level:                                                                                                                                                ERROR: cannot open `level' (No such file or directory)
+0.docx:                                                                                                                                               ERROR: cannot open `0.docx' (No such file or directory)
+/home/ranjit/.profile:                                                                                                                               ASCII text
+/home/ranjit/.xinputrc:                                                                                                                              ASCII text
+/home/ranjit/.mozilla:                                                                                                                               directory 
+/home/ranjit/.mozilla/extensions:                                                                                                                    directory 
+/home/ranjit/.mozilla/firefox:                                                                                                                       directory 
+/home/ranjit/.mozilla/firefox/6u49m1bs.default:                                                                                                      directory 
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/webappsstore.sqlite:                                                                                  SQLite 3.x database
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/extensions.json:                                                                                      UTF-8 Unicode text, with very long lines, with no line terminators
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/revocations.txt:                                                                                      ASCII text
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/places.sqlite-wal:                                                                                    data
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/lock:                                                                                                 broken symbolic link to `127.0.1.1:+2574'
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/blocklist.xml:                                                                                        XML 1.0 document text
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/extensions:                                                                                           directory 
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/addons.json:                                                                                          ASCII text, with very long lines, with no line terminators
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/datareporting:                                                                                        directory 
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/datareporting/aborted-session-ping:                                                                   UTF-8 Unicode text, with very long lines, with no line terminators
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/datareporting/archived:                                                                               directory 
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/datareporting/archived/2017-09:                                                                       directory 
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/datareporting/archived/2017-09/1504764296530.7c6ed3aa-3ab5-4081-bacd-ac04a0eca439.main.jsonlz4:       data
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/datareporting/state.json:                                                                             ASCII text, with no line terminators
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/datareporting/session-state.json:                                                                     ASCII text, with no line terminators
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/cookies.sqlite:                                                                                       SQLite 3.x database, user version 7
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/crashes:                                                                                              directory 
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/crashes/events:                                                                                       directory 
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/crashes/store.json.mozlz4:                                                                            data
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/secmod.db:                                                                                            Berkeley DB 1.85 (Hash, version 2, native byte-order)
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/search.json:                                                                                          ASCII text, with very long lines, with no line terminators
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/cert8.db:                                                                                             Berkeley DB 1.85 (Hash, version 2, native byte-order)
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/healthreport:                                                                                         directory 
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/places.sqlite-shm:                                                                                    data
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/gmp-gmpopenh264:                                                                                      directory 
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/gmp-gmpopenh264/1.5.3:                                                                                directory 
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/gmp-gmpopenh264/1.5.3/libgmpopenh264.so:                                                              ELF 64-bit LSB  shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=f4b339efe471384081fd951968ba639aec0f4a5e, not stripped
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/gmp-gmpopenh264/1.5.3/gmpopenh264.info:                                                               ASCII text
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/permissions.sqlite:                                                                                   SQLite 3.x database, user version 9
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/compatibility.ini:                                                                                    ASCII text
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/bookmarkbackups:                                                                                      directory 
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/bookmarkbackups/bookmarks-2017-09-07_20_1VglEeQVdqrhKkmBIAaFiw==.jsonlz4:                             data
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/healthreport.sqlite-wal:                                                                              data
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/gmp:                                                                                                  directory 
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/gmp/Linux_x86_64-gcc3:                                                                                directory 
+/home/ranjit/.mozilla/firefox/6u49m1bs.default/webappsstore.sqlite-shm:                                                                              data
+______________________________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________________________________
+6.Use grep to print the line in /etc/passwd that contains your login details.
+-->>
+ranjit@ranjit-Vostro-1540:~$ cat /etc/passwd | grep ranjit
+ranjit:x:1000:1000:ranjit,,,:/home/ranjit:/bin/bash
+
+________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________
+7. Use find and grep and sort to display a sorted list of all files in the /home subdirectory tree that contain the word hello somewhere inside them.
+-->>
+ranjit@ranjit-Vostro-1540:~$ find /home | grep hello | sort
+/home/ranjit/Documents/hello.txt
+/home/ranjit/Downloads/hello.txt
+ranjit@ranjit-Vostro-1540:~$ 
+___________________________________________________________________________________________________________________________________________
+___________________________________________________________________________________________________________________________________________
+8. Use locate to find all filenames that contain the word emacs. Can you combine this with grep to avoid displaying all filenames containing the word lib?
+
+-->>
+ranjit@ranjit-Vostro-1540:~$ locate -w emacs | grep -v lib
+/etc/emacs
+/etc/emacs/site-start.d
+/etc/emacs/site-start.d/50dictionaries-common.el
+/etc/speech-dispatcher/clients/emacs.conf
+/usr/share/emacs
+/usr/share/app-install/desktop/emacs23:emacs23.desktop
+/usr/share/app-install/desktop/emacs24-lucid:emacs24-lucid.desktop
+/usr/share/app-install/desktop/emacs24:emacs24.desktop
+/usr/share/app-install/desktop/supercollider-emacs:scel.desktop
+/usr/share/app-install/desktop/yi:yi-emacs.desktop
+/usr/share/app-install/icons/_usr_share_emacs_21.4_etc_gnu-32x32.xpm
+/usr/share/app-install/icons/_usr_share_icons_hicolor_scalable_apps_emacs23.svg
+/usr/share/app-install/icons/_usr_share_icons_hicolor_scalable_apps_emacs24.svg
+/usr/share/doc/dictionaries-common/README.emacs.gz
+/usr/share/emacs/site-lisp
+/usr/share/emacs/site-lisp/desktop-entry-mode.el
+/usr/share/emacs/site-lisp/dictionaries-common
+/usr/share/emacs/site-lisp/dictionaries-common/debian-ispell.el
+/usr/share/emacs/site-lisp/dictionaries-common/flyspell.el
+/usr/share/emacs/site-lisp/dictionaries-common/ispell.el
+/usr/share/gettext/styles/po-emacs-x.css
+/usr/share/gettext/styles/po-emacs-xterm.css
+/usr/share/gettext/styles/po-emacs-xterm16.css
+/usr/share/gettext/styles/po-emacs-xterm256.css
+/usr/share/mime/text/x-emacs-lisp.xml
+/usr/share/speech-dispatcher/conf/clients/emacs.conf
+/var/cache/dictionaries-common/emacsen-ispell-default.el
+/var/cache/dictionaries-common/emacsen-ispell-dicts.el
+______________________________________________________________________________________
+9. Archive the contents of your home directory (including any subdirectories) using tar and cpio. Compress the tar archive with compress, and the cpio archive with gzip. Now extract their
+contents.
+-->>
+
+ranjit@ranjit-Vostro-1540:~$ tar -cvwf file.tar /home
+add ‘/home’?find play -type f | cpio -o | gzip -c> cpio.cpio.gz
+ranjit@ranjit-Vostro-1540:~$ ls
+abc.txt    Downloads         Music     sample.txt  Videos
+Desktop    examples.desktop  Pictures  simple.tar  world2.txt
+Documents  file.tar          Public    Templates   world.txt
+ranjit@ranjit-Vostro-1540:~$ gzip file.tar
+ranjit@ranjit-Vostro-1540:~$ ls
+abc.txt    Downloads         Music     sample.txt  Videos
+Desktop    examples.desktop  Pictures  simple.tar  world2.txt
+Documents  file.tar.gz       Public    Templates   world.txt
+ranjit@ranjit-Vostro-1540:~$ gunzip file.tar.gz
+ranjit@ranjit-Vostro-1540:~$ ls
+abc.txt    Downloads         Music     sample.txt  Videos
+Desktop    examples.desktop  Pictures  simple.tar  world2.txt
+Documents  file.tar          Public    Templates   world.txt
+ranjit@ranjit-Vostro-1540:~$ ]
+__________________________________________________________________________________________________________
+10. On Linux systems, the file /dev/urandom is a constantly generated random stream of characters. Can you use this file with ‘od’ to print out a random decimal number?
+-->>
+Yes we can use od to print out a random decimal number.
+using following command
+ranjit@ranjit-Vostro-1540:~$ o^C-d /dev/urandom
+_________________________________________________________________________________________________________________
+11.Type mount (with no parameters) and try to interpret the output.
+
+-->>
+ranjit@ranjit-Vostro-1540:~$ mount
+/dev/sda1 on / type ext4 (rw,errors=remount-ro)
+proc on /proc type proc (rw,noexec,nosuid,nodev)
+sysfs on /sys type sysfs (rw,noexec,nosuid,nodev)
+none on /sys/fs/cgroup type tmpfs (rw)
+none on /sys/fs/fuse/connections type fusectl (rw)
+none on /sys/kernel/debug type debugfs (rw)
+none on /sys/kernel/security type securityfs (rw)
+udev on /dev type devtmpfs (rw,mode=0755)
+devpts on /dev/pts type devpts (rw,noexec,nosuid,gid=5,mode=0620)
+tmpfs on /run type tmpfs (rw,noexec,nosuid,size=10%,mode=0755)
+none on /run/lock type tmpfs (rw,noexec,nosuid,nodev,size=5242880)
+none on /run/shm type tmpfs (rw,nosuid,nodev)
+none on /run/user type tmpfs (rw,noexec,nosuid,nodev,size=104857600,mode=0755)
+none on /sys/fs/pstore type pstore (rw)
+tracefs on /var/lib/ureadahead/debugfs/tracing type tracefs (rw,relatime)
+systemd on /sys/fs/cgroup/systemd type cgroup (rw,noexec,nosuid,nodev,none,name=systemd)
+gvfsd-fuse on /run/user/1000/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,user=ranjit)
+
+

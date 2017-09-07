@@ -1,0 +1,13 @@
+
+QUES 10. How would you create and then delete a file called "$SHELL"? Try it.	
+
+if you want to create file with $SHEEL then you can use it with single quoted word like '$SHELL'.
+
+For creation use
+
+touch '$SHELL'
+
+For deletion use
+
+rm '$SHELL'
+

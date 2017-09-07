@@ -1,0 +1,5 @@
+QUES 15. Delete the work directory and its contents with one command. Accept no Complaints or queries.
+
+ranjit@ranjit-Vostro-1540:/home$ sudo rm -r work
+
+

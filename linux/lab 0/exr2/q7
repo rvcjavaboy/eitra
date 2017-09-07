@@ -1,0 +1,18 @@
+QUES 7. Create a file called hello.txt that contains the words "hello world". Can you use cp command, by using "terminal" as the source file to achieve the same effect?
+
+read the console input and write into file
+
+
+Example
+
+
+ranjit@ranjit-Vostro-1540:~/linux/ass2/exr2/play$ cp /dev/tty hello.txt
+ssssssss
+ssssssssssssssssssssssssssssssssssss
+^C
+ranjit@ranjit-Vostro-1540:~/linux/ass2/exr2/play$ cat hello.txt 
+ssssssss
+ssssssssssssssssssssssssssssssssssss
+ranjit@ranjit-Vostro-1540:~/linux/ass2/exr2/play$
+
+

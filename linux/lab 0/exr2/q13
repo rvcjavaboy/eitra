@@ -1,0 +1,18 @@
+QUES 13. What is the output of the command: echo {con,pre}{sent,fer}{s,ed}? Now, from your home directory, copy /etc/passwd and /etc/group into your home directory in one command given that you can only type /etc once.
+
+
+root@ranjit-Vostro-1540:/home/ranjit/linux/ass2/exr2/play# echo {con,pre}{sent,fer}{s,ed}
+consents consented confers confered presents presented prefers prefered
+
+
+
+root@ranjit-Vostro-1540:/home# cp -p /etc/passwd /etc/group  /home
+root@ranjit-Vostro-1540:/home# ls
+group  passwd  ranjit
+
+
+
+
+
+
+

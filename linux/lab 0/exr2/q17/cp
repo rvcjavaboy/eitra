@@ -1,0 +1,28 @@
+Make a copy of a file into the same directory: 
+
+		ranjit@ranjit-Vostro-1540:~/play$ cp /home/ranjit/cmd cmd
+
+
+		ranjit@ranjit-Vostro-1540:~/play$ cp -i /home/ranjit/cmd cmd
+		cp: overwrite 'cmd'? y
+
+
+Copy a file into another directory:
+		ranjit@ranjit-Vostro-1540:~/play$ cp passwd  /home/ranjit
+
+
+
+Copy a file into another directory, and give it a new name:
+		ranjit@ranjit-Vostro-1540:~/play$cp passwd /home/ranjit/linux
+
+
+Copy multiple files into another directory, using a wildcard:
+	
+		ranjit@ranjit-Vostro-1540:~/play$ranjit@ranjit-Vostro-1540:~/play$ cp * d/
+		cp: omitting directory 'd'
+		ranjit@ranjit-Vostro-1540:~/play$cp *.jpg /d/jpegfile
+
+Copy an entire directory structure into another location:
+
+		ranjit@ranjit-Vostro-1540:~/play$cp -R /home/ranjit /d
+

@@ -1,0 +1,5 @@
+QUES 6. What is the difference between listing the contents of directory play with ls l and ls L?
+ls -l                          use a long listing format
+ls -L,           			   when showing file information for a symbolic
+                               link, show information for the file the link
+                               references rather than for the link itself

@@ -1,0 +1,25 @@
+QUES 4. What is the difference between Hard link and Symbolic link.
+
+What are Hard Links
+
+1. Hard Links have same inodes number.
+2. ls -l command shows all the links with the link column showing the number of links.
+3. Links have actual file contents
+4. Removing any link, just reduces the link count but doesn't affect the other links.
+5. You cannot create a Hard Link for a directory.
+6. Even if the original file is removed, the link will still show you the contents of the file.
+What are Soft Links
+
+1. Soft Links have different inodes numbers.
+2. ls -l command shows all links with second column value 1 and the link points to original file.
+3. Soft Link contains the path for original file and not the contents.
+4. Removing soft link doesn't affect anything but when the original file is removed, the link becomes a 'dangling' link that points to nonexistent file.
+5. A Soft Link can link to a directory.
+
+
+
+Hard Links
+
+
+
+

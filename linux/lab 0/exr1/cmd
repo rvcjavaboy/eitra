@@ -1,0 +1,594 @@
+hello world
+
+Changing password for ranjit.
+[sudo] password for ranjit: 
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+
+Wed Sep  6 16:11:41 IST 2017
+ranjit-Vostro-1540
+x86_64
+Linux
+ 16:12:35 up  6:38,  1 user,  load average: 0.70, 0.41, 0.39
+ranjit
+ranjit   tty7         2017-09-06 09:35 (:0)
+uid=1000(ranjit) gid=1000(ranjit) groups=1000(ranjit),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),108(lpadmin),124(sambashare)
+ranjit   tty7         :0               Wed Sep  6 09:35    gone - no logout
+reboot   system boot  4.4.0-92-generic Wed Sep  6 15:04   still running
+ranjit   tty7         :0               Tue Sep  5 16:47 - down   (01:05)
+reboot   system boot  4.4.0-92-generic Tue Sep  5 22:16 - 17:53  (-4:-23)
+ranjit   tty7         :0               Tue Sep  5 09:35 - down   (06:44)
+reboot   system boot  4.4.0-92-generic Tue Sep  5 15:04 - 16:20  (01:16)
+ranjit   tty7         :0               Tue Sep  5 02:32 - down   (00:11)
+reboot   system boot  4.4.0-92-generic Tue Sep  5 08:01 - 02:43  (-5:-17)
+ranjit   tty7         :0               Tue Sep  5 00:28 - crash  (07:32)
+reboot   system boot  4.4.0-92-generic Tue Sep  5 05:57 - 02:43  (-3:-14)
+ranjit   tty7         :0               Mon Sep  4 09:37 - crash  (20:20)
+reboot   system boot  4.4.0-92-generic Mon Sep  4 15:06 - 02:43  (11:37)
+ranjit   tty8         :1               Sun Sep  3 13:01 - crash (1+02:04)
+guest-q5 tty7         :0               Sun Sep  3 12:51 - crash (1+02:14)
+reboot   system boot  4.4.0-92-generic Sun Sep  3 18:20 - 02:43 (1+08:22)
+ranjit   tty7         :0               Sat Sep  2 23:47 - crash  (18:33)
+reboot   system boot  4.4.0-92-generic Sun Sep  3 05:16 - 02:43 (1+21:27)
+ranjit   tty7         :0               Sat Sep  2 20:40 - crash  (08:35)
+reboot   system boot  4.4.0-92-generic Sun Sep  3 02:09 - 02:43 (2+00:34)
+ranjit   tty7         :0               Sat Sep  2 09:40 - down   (08:38)
+reboot   system boot  4.4.0-92-generic Sat Sep  2 15:09 - 18:19  (03:09)
+ranjit   tty7         :0               Fri Sep  1 21:30 - crash  (17:39)
+reboot   system boot  4.4.0-92-generic Sat Sep  2 02:58 - 18:19  (15:20)
+reboot   system boot  4.4.0-92-generic Sat Sep  2 02:57 - 21:28  (-5:-29)
+
+wtmp begins Sat Sep  2 02:57:58 2017
+[?1h=[?25l[H[2J(B[mtop - 16:13:02 up  6:38,  1 user,  load average: 0.42, 0.37, 0.37(B[m[39;49m(B[m[39;49m[K
+Tasks:(B[m[39;49m[1m 217 (B[m[39;49mtotal,(B[m[39;49m[1m   2 (B[m[39;49mrunning,(B[m[39;49m[1m 214 (B[m[39;49msleeping,(B[m[39;49m[1m   0 (B[m[39;49mstopped,(B[m[39;49m[1m   1 (B[m[39;49mzombie(B[m[39;49m(B[m[39;49m[K
+%Cpu(s):(B[m[39;49m[1m  5.3 (B[m[39;49mus,(B[m[39;49m[1m  0.8 (B[m[39;49msy,(B[m[39;49m[1m  0.1 (B[m[39;49mni,(B[m[39;49m[1m 93.1 (B[m[39;49mid,(B[m[39;49m[1m  0.7 (B[m[39;49mwa,(B[m[39;49m[1m  0.0 (B[m[39;49mhi,(B[m[39;49m[1m  0.0 (B[m[39;49msi,(B[m[39;49m[1m  0.0 (B[m[39;49mst(B[m[39;49m(B[m[39;49m[K
+KiB Mem :(B[m[39;49m[1m  5904932 (B[m[39;49mtotal,(B[m[39;49m[1m  2333900 (B[m[39;49mfree,(B[m[39;49m[1m  1704060 (B[m[39;49mused,(B[m[39;49m[1m  1866972 (B[m[39;49mbuff/cache(B[m[39;49m(B[m[39;49m[K
+KiB Swap:(B[m[39;49m[1m  1998844 (B[m[39;49mtotal,(B[m[39;49m[1m  1998844 (B[m[39;49mfree,(B[m[39;49m[1m        0 (B[m[39;49mused.(B[m[39;49m[1m  3594608 (B[m[39;49mavail Mem (B[m[39;49m(B[m[39;49m[K
+[K
+[7m  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND     (B[m[39;49m[K
+(B[m[1m14073 ranjit    20   0 2442192 493692 135300 R   6.2  8.4   1:55.88 Web Content (B[m[39;49m[K
+(B[m[1m14576 ranjit    20   0   41800   3840   3216 R   6.2  0.1   0:00.01 top         (B[m[39;49m[K
+(B[m    1 root      20   0  119708   5864   3984 S   0.0  0.1   0:02.84 systemd     (B[m[39;49m[K
+(B[m    2 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kthreadd    (B[m[39;49m[K
+(B[m    3 root      20   0       0      0      0 S   0.0  0.0   0:00.12 ksoftirqd/0 (B[m[39;49m[K
+(B[m    5 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/0:+ (B[m[39;49m[K
+(B[m    7 root      20   0       0      0      0 S   0.0  0.0   0:07.92 rcu_sched   (B[m[39;49m[K
+(B[m    8 root      20   0       0      0      0 S   0.0  0.0   0:00.00 rcu_bh      (B[m[39;49m[K
+(B[m    9 root      rt   0       0      0      0 S   0.0  0.0   0:00.01 migration/0 (B[m[39;49m[K
+(B[m   10 root      rt   0       0      0      0 S   0.0  0.0   0:00.08 watchdog/0  (B[m[39;49m[K
+(B[m   11 root      rt   0       0      0      0 S   0.0  0.0   0:00.08 watchdog/1  (B[m[39;49m[K
+(B[m   12 root      rt   0       0      0      0 S   0.0  0.0   0:00.01 migration/1 (B[m[39;49m[K
+(B[m   13 root      20   0       0      0      0 S   0.0  0.0   0:00.12 ksoftirqd/1 (B[m[39;49m[K
+(B[m   15 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/1:+ (B[m[39;49m[K
+(B[m   16 root      rt   0       0      0      0 S   0.0  0.0   0:00.07 watchdog/2  (B[m[39;49m[K
+(B[m   17 root      rt   0       0      0      0 S   0.0  0.0   0:00.02 migration/2 (B[m[39;49m[K
+(B[m   18 root      20   0       0      0      0 S   0.0  0.0   0:00.27 ksoftirqd/2 (B[m[39;49m[K[H(B[mtop - 16:13:05 up  6:38,  1 user,  load average: 0.39, 0.36, 0.37(B[m[39;49m(B[m[39;49m[K
+Tasks:(B[m[39;49m[1m 217 (B[m[39;49mtotal,(B[m[39;49m[1m   1 (B[m[39;49mrunning,(B[m[39;49m[1m 215 (B[m[39;49msleeping,(B[m[39;49m[1m   0 (B[m[39;49mstopped,(B[m[39;49m[1m   1 (B[m[39;49mzombie(B[m[39;49m(B[m[39;49m[K
+%Cpu(s):(B[m[39;49m[1m  1.4 (B[m[39;49mus,(B[m[39;49m[1m  0.5 (B[m[39;49msy,(B[m[39;49m[1m  0.0 (B[m[39;49mni,(B[m[39;49m[1m 98.1 (B[m[39;49mid,(B[m[39;49m[1m  0.0 (B[m[39;49mwa,(B[m[39;49m[1m  0.0 (B[m[39;49mhi,(B[m[39;49m[1m  0.0 (B[m[39;49msi,(B[m[39;49m[1m  0.0 (B[m[39;49mst(B[m[39;49m(B[m[39;49m[K
+KiB Mem :(B[m[39;49m[1m  5904932 (B[m[39;49mtotal,(B[m[39;49m[1m  2332552 (B[m[39;49mfree,(B[m[39;49m[1m  1705404 (B[m[39;49mused,(B[m[39;49m[1m  1866976 (B[m[39;49mbuff/cache(B[m[39;49m(B[m[39;49m[K
+KiB Swap:(B[m[39;49m[1m  1998844 (B[m[39;49mtotal,(B[m[39;49m[1m  1998844 (B[m[39;49mfree,(B[m[39;49m[1m        0 (B[m[39;49mused.(B[m[39;49m[1m  3593268 (B[m[39;49mavail Mem (B[m[39;49m(B[m[39;49m[K
+[K
+
+(B[m14073 ranjit    20   0 2442192 493752 135300 S   3.3  8.4   1:55.98 Web Content (B[m[39;49m[K
+(B[m 1740 ranjit     9 -11  435612  12232   8804 S   1.0  0.2   0:51.23 pulseaudio  (B[m[39;49m[K
+(B[m 1789 ranjit    20   0 1492792  79324  42420 S   1.0  1.3   0:25.41 nautilus    (B[m[39;49m[K
+(B[m14400 ranjit    20   0 1061828  49668  30232 S   0.7  0.8   0:03.05 sublime_te+ (B[m[39;49m[K
+(B[m 1023 root      20   0  443072  85164  67256 S   0.3  1.4   5:29.32 Xorg        (B[m[39;49m[K
+(B[m 1605 ranjit    20   0  524336  27908  21728 S   0.3  0.5   0:10.42 bamfdaemon  (B[m[39;49m[K
+(B[m 1631 ranjit    20   0  668644  62544  30272 S   0.3  1.1   0:26.81 hud-service (B[m[39;49m[K
+(B[m 1844 ranjit    20   0 1596860 189584  54080 S   0.3  3.2   6:14.67 compiz      (B[m[39;49m[K
+(B[m13969 ranjit    20   0 2382336 340128 140564 S   0.3  5.8   1:17.03 firefox     (B[m[39;49m[K
+(B[m[1m14576 ranjit    20   0   41800   3840   3216 R   0.3  0.1   0:00.02 top         (B[m[39;49m[K
+(B[m    1 root      20   0  119708   5864   3984 S   0.0  0.1   0:02.84 systemd     (B[m[39;49m[K
+(B[m    2 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kthreadd    (B[m[39;49m[K
+(B[m    3 root      20   0       0      0      0 S   0.0  0.0   0:00.12 ksoftirqd/0 (B[m[39;49m[K
+(B[m    5 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/0:+ (B[m[39;49m[K
+(B[m    7 root      20   0       0      0      0 S   0.0  0.0   0:07.92 rcu_sched   (B[m[39;49m[K
+(B[m    8 root      20   0       0      0      0 S   0.0  0.0   0:00.00 rcu_bh      (B[m[39;49m[K
+(B[m    9 root      rt   0       0      0      0 S   0.0  0.0   0:00.01 migration/0 (B[m[39;49m[K[H(B[mtop - 16:13:08 up  6:38,  1 user,  load average: 0.39, 0.36, 0.37(B[m[39;49m(B[m[39;49m[K
+Tasks:(B[m[39;49m[1m 217 (B[m[39;49mtotal,(B[m[39;49m[1m   3 (B[m[39;49mrunning,(B[m[39;49m[1m 213 (B[m[39;49msleeping,(B[m[39;49m[1m   0 (B[m[39;49mstopped,(B[m[39;49m[1m   1 (B[m[39;49mzombie(B[m[39;49m(B[m[39;49m[K
+%Cpu(s):(B[m[39;49m[1m  4.5 (B[m[39;49mus,(B[m[39;49m[1m  1.3 (B[m[39;49msy,(B[m[39;49m[1m  0.0 (B[m[39;49mni,(B[m[39;49m[1m 93.6 (B[m[39;49mid,(B[m[39;49m[1m  0.5 (B[m[39;49mwa,(B[m[39;49m[1m  0.0 (B[m[39;49mhi,(B[m[39;49m[1m  0.1 (B[m[39;49msi,(B[m[39;49m[1m  0.0 (B[m[39;49mst(B[m[39;49m(B[m[39;49m[K
+KiB Mem :(B[m[39;49m[1m  5904932 (B[m[39;49mtotal,(B[m[39;49m[1m  2332664 (B[m[39;49mfree,(B[m[39;49m[1m  1704372 (B[m[39;49mused,(B[m[39;49m[1m  1867896 (B[m[39;49mbuff/cache(B[m[39;49m(B[m[39;49m[K
+KiB Swap:(B[m[39;49m[1m  1998844 (B[m[39;49mtotal,(B[m[39;49m[1m  1998844 (B[m[39;49mfree,(B[m[39;49m[1m        0 (B[m[39;49mused.(B[m[39;49m[1m  3593392 (B[m[39;49mavail Mem (B[m[39;49m(B[m[39;49m[K
+[K
+
+(B[m 1844 ranjit    20   0 1596860 189584  54080 S   8.0  3.2   6:14.91 compiz      (B[m[39;49m[K
+(B[m 1023 root      20   0  443220  85132  67224 S   4.7  1.4   5:29.46 Xorg        (B[m[39;49m[K
+(B[m[1m 9752 ranjit    20   0 1136204  43320  30044 R   3.7  0.7   0:11.45 gedit       (B[m[39;49m[K
+(B[m14073 ranjit    20   0 2442192 493752 135300 S   3.0  8.4   1:56.07 Web Content (B[m[39;49m[K
+(B[m 1535 ranjit    20   0  349184  11312   5400 S   1.3  0.2   0:39.08 ibus-daemon (B[m[39;49m[K
+(B[m 1740 ranjit     9 -11  435612  12232   8804 S   1.0  0.2   0:51.26 pulseaudio  (B[m[39;49m[K
+(B[m 1569 ranjit    20   0  478084  32456  24956 S   0.7  0.5   0:08.08 ibus-ui-gt+ (B[m[39;49m[K
+(B[m13969 ranjit    20   0 2382336 340128 140564 S   0.7  5.8   1:17.05 firefox     (B[m[39;49m[K
+(B[m14208 ranjit    20   0  660916  36644  29012 S   0.7  0.6   0:09.32 gnome-term+ (B[m[39;49m[K
+(B[m 1605 ranjit    20   0  524336  27908  21728 S   0.3  0.5   0:10.43 bamfdaemon  (B[m[39;49m[K
+(B[m 1631 ranjit    20   0  668644  62544  30272 S   0.3  1.1   0:26.82 hud-service (B[m[39;49m[K
+(B[m 1633 ranjit    20   0 1061136  34804  25564 S   0.3  0.6   0:01.13 unity-sett+ (B[m[39;49m[K
+(B[m 1646 ranjit    20   0  678388  76616  26256 S   0.3  1.3   0:25.72 unity-pane+ (B[m[39;49m[K
+(B[m 1688 ranjit    20   0  887352   6384   5524 S   0.3  0.1   0:00.08 indicator-+ (B[m[39;49m[K
+(B[m14277 root      20   0       0      0      0 S   0.3  0.0   0:00.54 kworker/u8+ (B[m[39;49m[K
+(B[m14400 ranjit    20   0 1061828  49668  30232 S   0.3  0.8   0:03.06 sublime_te+ (B[m[39;49m[K
+(B[m[1m14576 ranjit    20   0   41800   3840   3216 R   0.3  0.1   0:00.03 top         (B[m[39;49m[K[H(B[mtop - 16:13:11 up  6:39,  1 user,  load average: 0.36, 0.36, 0.37(B[m[39;49m(B[m[39;49m[K
+
+%Cpu(s):(B[m[39;49m[1m  7.3 (B[m[39;49mus,(B[m[39;49m[1m  1.4 (B[m[39;49msy,(B[m[39;49m[1m  0.0 (B[m[39;49mni,(B[m[39;49m[1m 90.7 (B[m[39;49mid,(B[m[39;49m[1m  0.6 (B[m[39;49mwa,(B[m[39;49m[1m  0.0 (B[m[39;49mhi,(B[m[39;49m[1m  0.0 (B[m[39;49msi,(B[m[39;49m[1m  0.0 (B[m[39;49mst(B[m[39;49m(B[m[39;49m[K
+KiB Mem :(B[m[39;49m[1m  5904932 (B[m[39;49mtotal,(B[m[39;49m[1m  2323708 (B[m[39;49mfree,(B[m[39;49m[1m  1704084 (B[m[39;49mused,(B[m[39;49m[1m  1877140 (B[m[39;49mbuff/cache(B[m[39;49m(B[m[39;49m[K
+KiB Swap:(B[m[39;49m[1m  1998844 (B[m[39;49mtotal,(B[m[39;49m[1m  1998844 (B[m[39;49mfree,(B[m[39;49m[1m        0 (B[m[39;49mused.(B[m[39;49m[1m  3584432 (B[m[39;49mavail Mem (B[m[39;49m(B[m[39;49m[K
+[K
+
+(B[m 9752 ranjit    20   0 1136204  43320  30044 S  14.6  0.7   0:11.89 gedit       (B[m[39;49m[K
+(B[m 1023 root      20   0  444236  85844  67936 S   5.6  1.5   5:29.63 Xorg        (B[m[39;49m[K
+(B[m[1m 1844 ranjit    20   0 1596860 189584  54080 R   4.6  3.2   6:15.05 compiz      (B[m[39;49m[K
+(B[m14073 ranjit    20   0 2442192 493752 135300 S   3.3  8.4   1:56.17 Web Content (B[m[39;49m[K
+(B[m 1740 ranjit     9 -11  435612  12232   8804 S   1.0  0.2   0:51.29 pulseaudio  (B[m[39;49m[K
+(B[m 1789 ranjit    20   0 1492792  79324  42420 S   1.0  1.3   0:25.44 nautilus    (B[m[39;49m[K
+(B[m[1m 1535 ranjit    20   0  349184  11312   5400 R   0.7  0.2   0:39.10 ibus-daemon (B[m[39;49m[K
+(B[m 2190 ranjit    20   0  453592  19124  14056 S   0.7  0.3   0:01.61 zeitgeist-+ (B[m[39;49m[K
+(B[m14150 ranjit    20   0 1271524 148992  98904 S   0.7  2.5   0:03.46 soffice.bin (B[m[39;49m[K
+(B[m 1479 ranjit    20   0   44136   4592   2800 S   0.3  0.1   0:09.72 dbus-daemon (B[m[39;49m[K
+(B[m 1569 ranjit    20   0  478084  32456  24956 S   0.3  0.5   0:08.09 ibus-ui-gt+ (B[m[39;49m[K
+(B[m 1605 ranjit    20   0  524336  27908  21728 S   0.3  0.5   0:10.44 bamfdaemon  (B[m[39;49m[K
+(B[m 1631 ranjit    20   0  668644  62544  30272 S   0.3  1.1   0:26.83 hud-service (B[m[39;49m[K
+(B[m 1640 ranjit    20   0  566748  15260  13108 S   0.3  0.3   0:00.26 gnome-sess+ (B[m[39;49m[K
+(B[m 1646 ranjit    20   0  678388  76616  26256 S   0.3  1.3   0:25.73 unity-pane+ (B[m[39;49m[K
+(B[m 1790 ranjit    20   0  920132  73568  31136 S   0.3  1.2   0:18.84 nm-applet   (B[m[39;49m[K
+(B[m13083 ranjit    20   0  289004   5084   4464 S   0.3  0.1   0:00.42 sd_cicero   (B[m[39;49m[K[H(B[mtop - 16:13:14 up  6:39,  1 user,  load average: 0.36, 0.36, 0.37(B[m[39;49m(B[m[39;49m[K
+Tasks:(B[m[39;49m[1m 217 (B[m[39;49mtotal,(B[m[39;49m[1m   1 (B[m[39;49mrunning,(B[m[39;49m[1m 215 (B[m[39;49msleeping,(B[m[39;49m[1m   0 (B[m[39;49mstopped,(B[m[39;49m[1m   1 (B[m[39;49mzombie(B[m[39;49m(B[m[39;49m[K
+%Cpu(s):(B[m[39;49m[1m  5.1 (B[m[39;49mus,(B[m[39;49m[1m  1.3 (B[m[39;49msy,(B[m[39;49m[1m  0.0 (B[m[39;49mni,(B[m[39;49m[1m 93.6 (B[m[39;49mid,(B[m[39;49m[1m  0.0 (B[m[39;49mwa,(B[m[39;49m[1m  0.0 (B[m[39;49mhi,(B[m[39;49m[1m  0.0 (B[m[39;49msi,(B[m[39;49m[1m  0.0 (B[m[39;49mst(B[m[39;49m(B[m[39;49m[K
+KiB Mem :(B[m[39;49m[1m  5904932 (B[m[39;49mtotal,(B[m[39;49m[1m  2314928 (B[m[39;49mfree,(B[m[39;49m[1m  1705188 (B[m[39;49mused,(B[m[39;49m[1m  1884816 (B[m[39;49mbuff/cache(B[m[39;49m(B[m[39;49m[K
+KiB Swap:(B[m[39;49m[1m  1998844 (B[m[39;49mtotal,(B[m[39;49m[1m  1998844 (B[m[39;49mfree,(B[m[39;49m[1m        0 (B[m[39;49mused.(B[m[39;49m[1m  3575664 (B[m[39;49mavail Mem (B[m[39;49m(B[m[39;49m[K
+[K
+
+(B[m 9752 ranjit    20   0 1136204  43320  30044 S   7.3  0.7   0:12.11 gedit       (B[m[39;49m[K
+(B[m 1023 root      20   0  444440  85844  67936 S   5.3  1.5   5:29.79 Xorg        (B[m[39;49m[K
+(B[m 1844 ranjit    20   0 1596860 189584  54080 S   4.3  3.2   6:15.18 compiz      (B[m[39;49m[K
+(B[m14073 ranjit    20   0 2442192 494628 135300 S   4.0  8.4   1:56.29 Web Content (B[m[39;49m[K
+(B[m 1535 ranjit    20   0  349184  11312   5400 S   2.0  0.2   0:39.16 ibus-daemon (B[m[39;49m[K
+(B[m 1569 ranjit    20   0  478084  32456  24956 S   1.0  0.5   0:08.12 ibus-ui-gt+ (B[m[39;49m[K
+(B[m 1740 ranjit     9 -11  435612  12232   8804 S   1.0  0.2   0:51.32 pulseaudio  (B[m[39;49m[K
+(B[m 1596 ranjit    20   0  188388   5488   5144 S   0.7  0.1   0:10.85 ibus-engin+ (B[m[39;49m[K
+(B[m13969 ranjit    20   0 2382336 339476 140564 S   0.7  5.7   1:17.08 firefox     (B[m[39;49m[K
+(B[m    7 root      20   0       0      0      0 S   0.3  0.0   0:07.93 rcu_sched   (B[m[39;49m[K
+(B[m  129 root      20   0       0      0      0 S   0.3  0.0   0:03.93 ips-monitor (B[m[39;49m[K
+(B[m  982 mysql     20   0 1246820 160188  16468 S   0.3  2.7   0:15.98 mysqld      (B[m[39;49m[K
+(B[m 1631 ranjit    20   0  668644  62544  30272 S   0.3  1.1   0:26.84 hud-service (B[m[39;49m[K
+(B[m 1789 ranjit    20   0 1492792  79324  42420 S   0.3  1.3   0:25.45 nautilus    (B[m[39;49m[K
+(B[m14400 ranjit    20   0 1061828  49668  30232 S   0.3  0.8   0:03.07 sublime_te+ (B[m[39;49m[K
+(B[m[1m14576 ranjit    20   0   41800   3840   3216 R   0.3  0.1   0:00.05 top         (B[m[39;49m[K
+(B[m    1 root      20   0  119708   5864   3984 S   0.0  0.1   0:02.84 systemd     (B[m[39;49m[K[?1l>[25;1H
+[?12l[?25h[K/bin/bash
+LS(1)                            User Commands                           LS(1)
+
+NAME
+       ls - list directory contents
+
+SYNOPSIS
+       ls [OPTION]... [FILE]...
+
+DESCRIPTION
+       List  information  about  the FILEs (the current directory by default).
+       Sort entries alphabetically if none of -cftuvSUX nor --sort  is  speci‐
+       fied.
+
+       Mandatory  arguments  to  long  options are mandatory for short options
+       too.
+
+       -a, --all
+              do not ignore entries starting with .
+
+       -A, --almost-all
+              do not list implied . and ..
+
+       --author
+              with -l, print the author of each file
+
+       -b, --escape
+              print C-style escapes for nongraphic characters
+
+       --block-size=SIZE
+              scale sizes by SIZE before printing them; e.g., '--block-size=M'
+              prints sizes in units of 1,048,576 bytes; see SIZE format below
+
+       -B, --ignore-backups
+              do not list implied entries ending with ~
+
+       -c     with -lt: sort by, and show, ctime (time of last modification of
+              file status information); with -l: show ctime and sort by  name;
+              otherwise: sort by ctime, newest first
+
+       -C     list entries by columns
+
+       --color[=WHEN]
+              colorize  the output; WHEN can be 'always' (default if omitted),
+              'auto', or 'never'; more info below
+
+       -d, --directory
+              list directories themselves, not their contents
+
+       -D, --dired
+              generate output designed for Emacs' dired mode
+
+       -f     do not sort, enable -aU, disable -ls --color
+
+       -F, --classify
+              append indicator (one of */=>@|) to entries
+
+       --file-type
+              likewise, except do not append '*'
+
+       --format=WORD
+              across -x, commas -m, horizontal -x, long -l, single-column  -1,
+              verbose -l, vertical -C
+
+       --full-time
+              like -l --time-style=full-iso
+
+       -g     like -l, but do not list owner
+
+       --group-directories-first
+              group directories before files;
+
+              can   be  augmented  with  a  --sort  option,  but  any  use  of
+              --sort=none (-U) disables grouping
+
+       -G, --no-group
+              in a long listing, don't print group names
+
+       -h, --human-readable
+              with -l and/or -s, print human readable sizes (e.g., 1K 234M 2G)
+
+       --si   likewise, but use powers of 1000 not 1024
+
+       -H, --dereference-command-line
+              follow symbolic links listed on the command line
+
+       --dereference-command-line-symlink-to-dir
+              follow each command line symbolic link
+
+              that points to a directory
+
+       --hide=PATTERN
+              do not list implied entries matching shell  PATTERN  (overridden
+              by -a or -A)
+
+       --indicator-style=WORD
+              append indicator with style WORD to entry names: none (default),
+              slash (-p), file-type (--file-type), classify (-F)
+
+       -i, --inode
+              print the index number of each file
+
+       -I, --ignore=PATTERN
+              do not list implied entries matching shell PATTERN
+
+       -k, --kibibytes
+              default to 1024-byte blocks for disk usage
+
+       -l     use a long listing format
+
+       -L, --dereference
+              when showing file information for a symbolic link, show informa‐
+              tion  for  the file the link references rather than for the link
+              itself
+
+       -m     fill width with a comma separated list of entries
+
+       -n, --numeric-uid-gid
+              like -l, but list numeric user and group IDs
+
+       -N, --literal
+              print raw entry names (don't treat e.g. control characters  spe‐
+              cially)
+
+       -o     like -l, but do not list group information
+
+       -p, --indicator-style=slash
+              append / indicator to directories
+
+       -q, --hide-control-chars
+              print ? instead of nongraphic characters
+
+       --show-control-chars
+              show nongraphic characters as-is (the default, unless program is
+              'ls' and output is a terminal)
+
+       -Q, --quote-name
+              enclose entry names in double quotes
+
+       --quoting-style=WORD
+              use quoting style WORD for entry names: literal, locale,  shell,
+              shell-always, shell-escape, shell-escape-always, c, escape
+
+       -r, --reverse
+              reverse order while sorting
+
+       -R, --recursive
+              list subdirectories recursively
+
+       -s, --size
+              print the allocated size of each file, in blocks
+
+       -S     sort by file size, largest first
+
+       --sort=WORD
+              sort  by  WORD instead of name: none (-U), size (-S), time (-t),
+              version (-v), extension (-X)
+
+       --time=WORD
+              with -l, show time as WORD instead of default modification time:
+              atime  or  access  or  use  (-u); ctime or status (-c); also use
+              specified time as sort key if --sort=time (newest first)
+
+       --time-style=STYLE
+              with -l, show times using style STYLE: full-iso, long-iso,  iso,
+              locale,  or  +FORMAT;  FORMAT  is interpreted like in 'date'; if
+              FORMAT  is  FORMAT1<newline>FORMAT2,  then  FORMAT1  applies  to
+              non-recent  files  and FORMAT2 to recent files; if STYLE is pre‐
+              fixed with 'posix-', STYLE takes effect only outside  the  POSIX
+              locale
+
+       -t     sort by modification time, newest first
+
+       -T, --tabsize=COLS
+              assume tab stops at each COLS instead of 8
+
+       -u     with  -lt:  sort by, and show, access time; with -l: show access
+              time and sort by name; otherwise: sort by  access  time,  newest
+              first
+
+       -U     do not sort; list entries in directory order
+
+       -v     natural sort of (version) numbers within text
+
+       -w, --width=COLS
+              set output width to COLS.  0 means no limit
+
+       -x     list entries by lines instead of by columns
+
+       -X     sort alphabetically by entry extension
+
+       -Z, --context
+              print any security context of each file
+
+       -1     list one file per line.  Avoid '\n' with -q or -b
+
+       --help display this help and exit
+
+       --version
+              output version information and exit
+
+       The  SIZE  argument  is  an  integer and optional unit (example: 10K is
+       10*1024).  Units are K,M,G,T,P,E,Z,Y  (powers  of  1024)  or  KB,MB,...
+       (powers of 1000).
+
+       Using  color  to distinguish file types is disabled both by default and
+       with --color=never.  With --color=auto, ls emits color codes only  when
+       standard  output is connected to a terminal.  The LS_COLORS environment
+       variable can change the settings.  Use the dircolors command to set it.
+
+   Exit status:
+       0      if OK,
+
+       1      if minor problems (e.g., cannot access subdirectory),
+
+       2      if serious trouble (e.g., cannot access command-line argument).
+
+AUTHOR
+       Written by Richard M. Stallman and David MacKenzie.
+
+REPORTING BUGS
+       GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
+       Report ls translation bugs to <http://translationproject.org/team/>
+
+COPYRIGHT
+       Copyright © 2016 Free Software Foundation, Inc.   License  GPLv3+:  GNU
+       GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+       This  is  free  software:  you  are free to change and redistribute it.
+       There is NO WARRANTY, to the extent permitted by law.
+
+SEE ALSO
+       Full documentation at: <http://www.gnu.org/software/coreutils/ls>
+       or available locally via: info '(coreutils) ls invocation'
+
+GNU coreutils 8.25               February 2017                           LS(1)
+WHO(1)                           User Commands                          WHO(1)
+
+NAME
+       who - show who is logged on
+
+SYNOPSIS
+       who [OPTION]... [ FILE | ARG1 ARG2 ]
+
+DESCRIPTION
+       Print information about users who are currently logged in.
+
+       -a, --all
+              same as -b -d --login -p -r -t -T -u
+
+       -b, --boot
+              time of last system boot
+
+       -d, --dead
+              print dead processes
+
+       -H, --heading
+              print line of column headings
+
+       --ips  print  ips  instead  of  hostnames. with --lookup, canonicalizes
+              based on stored IP, if available, rather than stored hostname
+
+       -l, --login
+              print system login processes
+
+       --lookup
+              attempt to canonicalize hostnames via DNS
+
+       -m     only hostname and user associated with stdin
+
+       -p, --process
+              print active processes spawned by init
+
+       -q, --count
+              all login names and number of users logged on
+
+       -r, --runlevel
+              print current runlevel
+
+       -s, --short
+              print only name, line, and time (default)
+
+       -t, --time
+              print last system clock change
+
+       -T, -w, --mesg
+              add user's message status as +, - or ?
+
+       -u, --users
+              list users logged in
+
+       --message
+              same as -T
+
+       --writable
+              same as -T
+
+       --help display this help and exit
+
+       --version
+              output version information and exit
+
+       If FILE is not specified, use /var/run/utmp.  /var/log/wtmp as FILE  is
+       common.   If  ARG1  ARG2  given, -m presumed: 'am i' or 'mom likes' are
+       usual.
+
+AUTHOR
+       Written by Joseph Arceneaux, David MacKenzie, and Michael Stone.
+
+REPORTING BUGS
+       GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
+       Report who translation bugs to <http://translationproject.org/team/>
+
+COPYRIGHT
+       Copyright © 2016 Free Software Foundation, Inc.   License  GPLv3+:  GNU
+       GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+       This  is  free  software:  you  are free to change and redistribute it.
+       There is NO WARRANTY, to the extent permitted by law.
+
+SEE ALSO
+       Full documentation at: <http://www.gnu.org/software/coreutils/who>
+       or available locally via: info '(coreutils) who invocation'
+
+GNU coreutils 8.25               February 2017                          WHO(1)
+[3;J[H[2J   September 2017     
+Su Mo Tu We Th Fr Sa  
+                1  2  
+ 3  4  5 _ _6  7  8  9  
+10 11 12 13 14 15 16  
+17 18 19 20 21 22 23  
+24 25 26 27 28 29 30  
+                      
+                            2000
+      January               February               March          
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  
+                   1         1  2  3  4  5            1  2  3  4  
+ 2  3  4  5  6  7  8   6  7  8  9 10 11 12   5  6  7  8  9 10 11  
+ 9 10 11 12 13 14 15  13 14 15 16 17 18 19  12 13 14 15 16 17 18  
+16 17 18 19 20 21 22  20 21 22 23 24 25 26  19 20 21 22 23 24 25  
+23 24 25 26 27 28 29  27 28 29              26 27 28 29 30 31     
+30 31                                                             
+
+       April                  May                   June          
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  
+                   1      1  2  3  4  5  6               1  2  3  
+ 2  3  4  5  6  7  8   7  8  9 10 11 12 13   4  5  6  7  8  9 10  
+ 9 10 11 12 13 14 15  14 15 16 17 18 19 20  11 12 13 14 15 16 17  
+16 17 18 19 20 21 22  21 22 23 24 25 26 27  18 19 20 21 22 23 24  
+23 24 25 26 27 28 29  28 29 30 31           25 26 27 28 29 30     
+30                                                                
+
+        July                 August              September        
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  
+                   1         1  2  3  4  5                  1  2  
+ 2  3  4  5  6  7  8   6  7  8  9 10 11 12   3  4  5  6  7  8  9  
+ 9 10 11 12 13 14 15  13 14 15 16 17 18 19  10 11 12 13 14 15 16  
+16 17 18 19 20 21 22  20 21 22 23 24 25 26  17 18 19 20 21 22 23  
+23 24 25 26 27 28 29  27 28 29 30 31        24 25 26 27 28 29 30  
+30 31                                                             
+
+      October               November              December        
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  
+ 1  2  3  4  5  6  7            1  2  3  4                  1  2  
+ 8  9 10 11 12 13 14   5  6  7  8  9 10 11   3  4  5  6  7  8  9  
+15 16 17 18 19 20 21  12 13 14 15 16 17 18  10 11 12 13 14 15 16  
+22 23 24 25 26 27 28  19 20 21 22 23 24 25  17 18 19 20 21 22 23  
+29 30 31              26 27 28 29 30        24 25 26 27 28 29 30  
+                                            31                    
+   September 1752     
+Su Mo Tu We Th Fr Sa  
+       1  2 14 15 16  
+17 18 19 20 21 22 23  
+24 25 26 27 28 29 30  
+                      
+                      
+                      
+4+5
+9
+    1  echo hello world
+    2  passwd 
+    3  hostname
+    4  arch
+    5  uname a
+    6  uname 
+    7  dmesg |more
+    8  uptime
+    9  whoami
+   10  who am i
+   11  who
+   12  id
+   13  last
+   14  finger
+   15  top
+   16  echo $SHELL
+   17  man ls
+   18  man who
+   19  clear
+   20  cal 2000
+   21  cal 9 1752
+   22  bc
+   23  echo 4+5
+   24  echo 5+4|bc
+   25  time sleep 5
+   26  history > command.txt
+   27  ls
+   28  clear
+   29  echo hello world >>cmd
+   30  passwd >>cmd
+   31  dfcd
+   32  clear
+   33  chpasswd
+   34  chpasswd :ranjit
+   35  sudo passwd ranjit
+   36  date >>cmd
+   37  hostname>>cmd
+   38  arch>>cmd
+   39  uname>>cmd
+   40  dmesg|more
+   41  uptime>>cmd
+   42  whoami>>cmd
+   43  who>>cmd
+   44  id>>cmd
+   45  last>>cmd
+   46  top>>cmd
+   47  echo $SHELL >>cmd
+   48  man ls >>cmd
+   49  man who>>cmd
+   50  clear>>cmd
+   51  cal >>cmd
+   52  cal 2000>>cmd
+   53  cal 2000 >>cmd
+   54  cal 9 1752 >>cmd
+   55  bc >>cmd
+   56  echo 4+5 >>cmd
+   57  echo 5+4|bc >>cmd
+   58  time sleep 5>>cmd
+   59  history >>cmd

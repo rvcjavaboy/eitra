@@ -1,0 +1,26 @@
+Removes the directory mydir.
+
+				ranjit@ranjit-Vostro-1540:~/play$ ls -l
+				total 44
+				-rw-rw-r-- 1 ranjit ranjit 31044 Sep  7 14:31 cmd
+				drwxrwxr-x 2 ranjit ranjit  4096 Sep  7 14:44 demo
+				-rw-rw-r-- 1 ranjit ranjit     0 Sep  7 14:28 hello
+				-rw-rw-r-- 1 ranjit ranjit     0 Sep  7 14:28 hello.c
+				drwxrwxrwx 2 ranjit ranjit  4096 Sep  7 14:46 mydemo
+				-rw-r--r-- 1 root   root    2350 Sep  6 21:21 passwd
+				ranjit@ranjit-Vostro-1540:~/play$ ls
+				cmd  demo  hello  hello.c  mydemo  passwd
+				ranjit@ranjit-Vostro-1540:~/play$ rmdir mydemo demo
+				ranjit@ranjit-Vostro-1540:~/play$ ls
+				cmd  hello  hello.c  passwd
+				ranjit@ranjit-Vostro-1540:~/play$ 
+
+
+Display a help message
+
+				ranjit@ranjit-Vostro-1540:~/play$rmdir --help 			
+
+
+Output version information
+				
+				ranjit@ranjit-Vostro-1540:~/play$rmdir --version 
