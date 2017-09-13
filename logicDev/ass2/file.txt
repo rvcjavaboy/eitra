@@ -1,0 +1,2 @@
+Combining the recommendations from others for specifying a character encoding and buffering the input, here's what I think is a pretty complete answer.
+Assuming you have a File object representing the file you want to read:
