@@ -1,0 +1,60 @@
+	<!--
+		Author:Ranjit Chavan
+		Page:Calculator
+
+
+	-->
+
+	<!DOCTYPE html>
+	<html>
+	<head>
+
+
+		<title>Calculator</title>
+		<script type="text/javascript" src="calc.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+		</style>
+	</head>
+	<body>
+	<center>
+		<main>
+		
+		
+		<input type="textbox" name="msg" id='msg'>	
+		<br>
+		<br>
+		<table>
+				<tr>
+				<th><button id="7" onclick="calculator('7')">7</button></th>
+				<th><button id="8" onclick="calculator('8')">8</button></th>
+				<th><button id="9" onclick="calculator('9')">9</button></th>
+				<th><button id="div" onclick="calculator('/')">/</button></th>
+			</tr>
+			<tr>
+				<th><button id="4" onclick="calculator('4')">4</button></th>
+				<th><button id="5"onclick="calculator('5')">5</button></th>
+				<th><button id="6" onclick="calculator('6')">6</button></th>
+				<th><button id="mul" onclick="calculator('*')">*</button></th>
+			</tr>
+		
+			<tr>
+				<th><button id="1" onclick="calculator('1')">1</button></th>
+				<th><button id="2" onclick="calculator('2')">2</button></th>
+				<th><button id="3" onclick="calculator('3')">3</button></th>
+				<th><button id="sub" onclick="calculator('-')">-</button></th>
+			</tr>
+			
+			<tr>
+				<th><button id="calc" onclick="exe('calc')">=</button></th>
+				<th><button id="sqr"  onclick="clearscreen()">C</button></th>
+				<th><button id="mod"  onclick="calculator('%')">%</button></th>
+				<th><button id="add"  onclick="calculator('+')">+</button></th>
+			</tr>	
+		</table>
+	</main>
+	</center>
+
+	</body>
+	</html>

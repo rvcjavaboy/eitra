@@ -1,0 +1,33 @@
+body{
+				background-color:  #ccffcc;
+			}
+
+			main{
+				background-color: #4da6ff;
+				margin-bottom:10%;
+				margin-top: 5%;
+				margin-right:35%;
+				margin-left: 35%;
+				padding: 1cm;
+				padding-top: -1em;
+				border-radius: 10px;
+			}
+
+			button{
+				padding: 10px;
+				background-color:  #99ccff;;
+				font-size: 12px;
+				box-shadow: none;
+				border-radius: 5px;
+				border-color:#99ccff;
+				padding: 12px; 
+				
+
+			}
+
+			#msg{
+				border-radius: 5px;
+				width: 4cm;
+				height: 0.7cm;
+				background-color: 	#ccccff;
+			}
