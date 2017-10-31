@@ -35,7 +35,7 @@ public class MagicSquare{
          int i = n/2;                              //first postion value set  
         int j = n-1;
   
-        for (int num=1; num <= n*n; num++)
+        for (int num=1; num <= n*n; num)
         {
             if (i==-1 && j==n) 
             {
