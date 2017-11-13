@@ -1,0 +1,32 @@
+Create an application called EBank. This application should have an 
+Account[acno,name,email, phone,balance] class. 
+This application should also contain a Tester class which displays the following menu.
+
+1. Add Account
+2. Display an Account
+3. Display All Accounts
+4. Remove an Account
+5. withdraw 
+6. deposit 
+7. transfer
+8. search account using name
+9. search account using email
+10. search account using phone
+11. exit.
+
+Use Collection to save Account objects.use Exceptions like InvalidAccountExceptions,
+AccountNotFoundExceptions and InsufficientBalanceExceptions and implement your own Interface called Operations which contains addAccount,displayAccount..and So on.
+Create AccountUtils class to implement this Functionality and Create Tester class For Calling Main Method.
+validations on account. 
+
+1. Name should be more than 5 characters
+2. balance should be more than 100.
+3. email should contain . and @
+4. phone should be of 10 digits.(phone properties is String)⁠⁠⁠⁠
+
+
+
+
+
+
+
